@@ -1,0 +1,80 @@
+.search {
+  margin: 100px auto 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .animes-loader {
+    height: 70vh;
+  }
+
+  .animes-container {
+    width: 75%;
+    margin: 30px auto;
+  }
+
+  .not-found {
+    @media (min-width: 785px) {
+      height: 62.5vh;
+      .not {
+        width: 27vw;
+      }
+    }
+
+    @media (max-width: 784px) {
+      min-height: 62vh;
+      .not {
+        width: 55vw;
+      }
+    }
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .not {
+      padding: 10px;
+
+      background-color: #f1eded;
+      border: 2px solid darkgray;
+      border-radius: 20px;
+
+      hr {
+        border: 1px solid #aba1a1;
+      }
+
+      .inf {
+        width: 100%;
+        text-align: center;
+
+        span {
+          font-weight: 300;
+        }
+      }
+
+      div:nth-child(1) {
+        display: flex;
+
+        h2 {
+          width: 100%;
+          font-size: 22px;
+
+          display: flex;
+          justify-content: center;
+          align-self: center;
+
+          b {
+            font-weight: 300;
+          }
+        }
+
+        img {
+          width: 30%;
+          padding: 10px;
+          border-radius: 15px;
+        }
+      }
+    }
+  }
+}

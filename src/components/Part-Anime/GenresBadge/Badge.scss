@@ -1,0 +1,15 @@
+.badge {
+  @media (max-width: 430px) {
+    font-size: 13px;
+  }
+  width: 100%;
+  font-size: 13.9px;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.badge div {
+  margin: 2px;
+}

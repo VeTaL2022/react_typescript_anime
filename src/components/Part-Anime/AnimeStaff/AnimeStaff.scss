@@ -1,0 +1,75 @@
+.anime-staff {
+  margin-left: 8px;
+  @media (min-width: 785px) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .staff-child {
+      width: 49%;
+      margin-top: 8px;
+
+      img {
+        width: 42px;
+        height: 100%;
+      }
+
+      .stt {
+        a {
+          font-size: 14.5px;
+        }
+
+        .inf i {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  @media (max-width: 784px) {
+    .staff-child {
+      margin-top: 10px;
+
+      img {
+        width: 47px;
+        height: 100%;
+      }
+
+      .stt {
+        a {
+          font-size: 15.5px;
+        }
+
+        .inf i {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .staff-child {
+    border: 1px solid grey;
+    background-color: rgba(255, 248, 132, 0.9);
+    display: flex;
+
+    img {
+      object-fit: cover;
+    }
+
+    .stt {
+      margin-top: 5px;
+
+      .inf {
+        margin-left: 8px;
+
+        i {
+          font-style: normal;
+          margin-right: 2px;
+        }
+      }
+    }
+  }
+
+  .staff-child:nth-last-child(1),
+  .staff-child:nth-last-child(2) {
+    background-color: rgba(255, 255, 182, 0.9);
+  }
+}

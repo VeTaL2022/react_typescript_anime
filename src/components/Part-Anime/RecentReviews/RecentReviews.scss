@@ -1,0 +1,188 @@
+@media (min-width: 785px) {
+  .recent-reviews {
+    width: 75%;
+
+    .review-child {
+      .review-anime-title a, .review-user a {
+        font-size: 14px;
+      }
+
+      .review-right span p {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@media (max-width: 784px) {
+  .recent-reviews {
+    width: 78%;
+
+    h4 {
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .review-child {
+      .review-anime-title a {
+        font-size: 17px;
+      }
+
+      .review-right {
+        span p {
+          font-size: 15px;
+        }
+
+        img {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.recent-reviews {
+  margin: 100px auto 30px;
+  min-height: 66.5vh;
+
+  h4 {
+    border-bottom: 1px solid dimgray;
+  }
+
+  .review-child:nth-last-child(1) {
+    border-bottom: none;
+  }
+
+  .review-child {
+    border-bottom: 1px solid dimgray;
+    margin-bottom: 15px;
+
+    .review-anime-title {
+      a {
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      span {
+        font-size: 13px;
+      }
+    }
+
+    .review-anime-container {
+      margin-top: 10px;
+      display: flex;
+
+      .review-left {
+        width: 50px;
+
+        img {
+          width: 50px;
+          object-fit: cover;
+        }
+      }
+
+      .review-right {
+        margin-left: 10px;
+
+        .review-user {
+          display: flex;
+          justify-content: space-between;
+
+          a {
+            text-decoration: none;
+          }
+
+          a:hover {
+            text-decoration: underline;
+          }
+
+          @media (max-width: 300px) {
+            span {
+              display: none;
+            }
+          }
+
+          span {
+            font-size: 14px;
+          }
+        }
+
+        .review-tags {
+          margin-top: 5px;
+
+          span {
+            display: flex;
+            align-items: flex-end;
+
+            svg {
+              font-size: 19px;
+            }
+
+            i {
+              padding-left: 2px;
+              font-style: normal;
+              font-size: 13.5px;
+            }
+          }
+        }
+
+        p {
+          margin: 15px 0 0 0;
+          padding: 0;
+          text-align: left;
+        }
+
+        img {
+          height: 70px;
+          width: 45px;
+          margin: 15px 0 0 0;
+          object-fit: cover;
+        }
+      }
+    }
+
+    @media (min-width: 785px) {
+      .review-footer {
+        width: 20%;
+      }
+    }
+    @media (max-width: 784px) {
+      .review-footer {
+        width: 100%;
+
+        span svg {
+          font-size: 17px;
+        }
+
+        div span {
+          font-size: 17px;
+
+          svg {
+            font-size: 30px;
+          }
+        }
+      }
+    }
+
+    .review-footer {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      div {
+        span {
+          cursor: pointer;
+        }
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}

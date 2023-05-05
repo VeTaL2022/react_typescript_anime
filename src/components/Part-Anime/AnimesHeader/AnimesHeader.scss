@@ -1,0 +1,104 @@
+.animes_header {
+  margin-left: 5px;
+  position: relative;
+
+  @media (max-width: 784px) {
+    .chosen_type, .chosen_default {
+      width: 70%;
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+  }
+
+  .chosen_genre, .chosen_producer {
+    margin-bottom: 20px;
+    border-bottom: 1px solid darkgray;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .chosen_type, .chosen_default {
+    margin-bottom: 20px;
+    border-bottom: 1px solid gray;
+
+    .active-item {
+      margin-right: 10px;
+      padding: 2px 4px;
+      text-decoration: none;
+      background-color: rgba(153, 153, 160, 0.45);
+    }
+
+    .item {
+      margin-right: 10px;
+      text-decoration: none;
+      padding: 2px 4px;
+    }
+
+    .item:hover {
+      background-color: rgba(93, 93, 169, 0.35);
+    }
+
+    @media (max-width: 784px) {
+      .active-item, .item {
+        width: 120px;
+        font-size: 18px;
+      }
+    }
+
+    @media (min-width: 785px) {
+      .active-item, .item {
+        font-size: 14px;
+      }
+    }
+
+  }
+
+  .chosen_year_season {
+    margin-bottom: 20px;
+    border-bottom: 1px solid darkgray;
+  }
+
+  .open {
+    font-size: 13px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .selection {
+    width: 120px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+    z-index: 3;
+
+    position: absolute;
+    top: 100%;
+    right: 0;
+
+    .close-icon {
+      text-align: right;
+    }
+
+    .sorted-options {
+      display: flex;
+      flex-direction: column;
+
+      .option {
+        margin: 2px 0;
+        padding: 2px 5px;
+        cursor: pointer;
+        font-size: 13px;
+      }
+
+      .option:hover {
+        background-color: #e8e858;
+      }
+    }
+  }
+}

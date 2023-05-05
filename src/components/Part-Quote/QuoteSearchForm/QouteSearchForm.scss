@@ -1,0 +1,26 @@
+.quotes-paper {
+  width: 320px;
+  margin: 10px auto;
+
+  input {
+    width: 220px;
+  }
+}
+
+@media (max-width: 468px) {
+  .quotes-paper {
+    width: 85%;
+
+    input {
+      width: 58vw;
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .quotes-paper {
+    input {
+      width: 48vw;
+    }
+  }
+}

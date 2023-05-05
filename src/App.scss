@@ -1,0 +1,358 @@
+$zero: 0;
+$hundred: 100%;
+$color_white: #fff;
+$background_theme: #060b26;
+
+* {
+  font-family: Bahnschrift, sans-serif;
+}
+
+.app {
+  position: absolute;
+  top: $zero;
+  bottom: $zero;
+  left: $zero;
+  right: $zero;
+
+  video {
+    position: fixed;
+    width: $hundred;
+    height: $hundred;
+    object-fit: cover;
+  }
+}
+
+
+.light * {
+  color: #000;
+  font-weight: 400;
+}
+
+.light * > b {
+  font-weight: 800;
+}
+
+.light * > a {
+  color: rgba(121, 2, 2, 0.86);
+}
+
+.light * > h4 {
+  font-weight: 500;
+}
+
+.light {
+  background-color: $color_white;
+  color: #000;
+}
+
+.dark * {
+  color: #fff;
+}
+
+.dark * > a {
+  color: cadetblue;
+}
+
+.dark * > b {
+  color: #9b9696;
+}
+
+.dark * > h4 {
+  color: #d5d5b0;
+}
+
+.dark .disclaimer {
+  .info {
+    background-color: $background_theme;
+    color: $color_white;
+  }
+
+  h3 {
+    background-color: #0d1a61;
+    color: $color_white;
+  }
+}
+
+.dark .app, .dark .navbar, .dark .nav-menu, .dark .navbar-toggle, .dark .front-side, .dark .back-side, .dark .article-container, .dark .quote-container {
+  background-color: $background_theme;
+}
+
+.dark .navbar h2 .main-title:hover {
+  color: #9ba7b2;
+}
+
+.dark .sidebar-item.open {
+  background-color: #202d7f;
+
+  .father {
+    background-color: #0d1a61;
+  }
+}
+
+.dark .expanded {
+  color: gray;
+}
+
+.dark .back-side-non-clickable, .dark .nav-text a:hover, .dark .father:hover, .dark .github:hover, .dark .front-side-header > .head {
+  background-color: #0d1a61;
+}
+
+.dark .back-side-non-clickable .link {
+  a {
+    color: #dfaf54;
+  }
+
+  a:hover {
+    color: #e5d5ba;
+  }
+}
+
+.dark .search-form__input {
+  color: $color_white;
+  background-color: dimgrey;
+  border: 1px solid gray;
+}
+
+.dark .anime-search-data, .dark .quotes-paper {
+  background-color: #898585;
+}
+
+.dark .anime-search-data {
+  .anime:hover, .anime-view:hover, .anime.last-hovered {
+    background-color: #4d5f71;
+  }
+
+  .anime-view {
+    background-color: rgb(77, 64, 64);
+  }
+}
+
+.dark .quotes-container {
+  button {
+    border-color: #404851;
+    color: #085cc0;
+  }
+
+  button:hover {
+    border-color: #085cc0;
+  }
+}
+
+.dark .paper-input {
+  color: $color_white;
+}
+
+.dark .search-form__input::placeholder {
+  color: lightgray;
+}
+
+.dark .search-form__button {
+  background-color: #2b3b8e;
+}
+
+.dark .search-form__button:hover {
+  background-color: #0d1a61;
+}
+
+.dark .search-form__clear {
+  background-color: #5f5f5f;
+}
+
+.dark .search-form__clear:hover {
+  background-color: #3e3c3c;
+}
+
+.dark .input-label {
+  color: darkgray;
+}
+
+.dark .form-genre {
+  .select {
+    border: 1px solid dimgray;
+  }
+
+  .select:hover {
+    border: 1px solid lightgray;
+  }
+}
+
+.dark .animes_header {
+  .selection {
+    background-color: slategrey;
+
+    .sorted-options > .option:hover {
+      background-color: #2339a7;
+    }
+  }
+}
+
+.light .recs_pagination, .light .pagination {
+  .Mui-selected, .MuiPaginationItem-root:hover {
+    background-color: rgba(223, 223, 4, 0.9);
+  }
+}
+
+.dark .recs_pagination, .dark .pagination {
+  .MuiPaginationItem-root {
+    color: $color_white;
+  }
+
+  .Mui-selected, .MuiPaginationItem-root:hover {
+    background-color: #06144c;
+  }
+}
+
+.dark .article-container span {
+  color: #b3b3b3;
+}
+
+.dark .seasons-footer, .dark .footer {
+  background-color: #0d1a61;
+}
+
+.dark .news-footer {
+  button {
+    color: #fff;
+    background-color: #2339a7;
+  }
+
+  button:hover {
+    background-color: #5260b0;
+  }
+}
+
+.dark .replay-container {
+  background-color: #000;
+}
+
+.dark .category-buttons-container {
+  background-color: #253271;
+  color: $color_white;
+}
+
+.dark .category-button-wrapper > button {
+  color: $color_white;
+}
+
+.dark .anime-details-left-part {
+  .section > .text > .less span,
+  .section > .text > .more span {
+    color: #aeaaaa;
+  }
+}
+
+.dark .review > .review-container > .right > .reaction {
+  background-color: rgba(13, 26, 97, 0.70);
+}
+
+.dark .review > .review-container > .right > .reaction > span {
+  background-color: rgba(0, 103, 211, 0.50);
+}
+
+.dark .review > .review-container > .right > .reaction > span > i,
+.dark .review > .review-container > .right > .reaction > span > b {
+  color: lightgray;
+}
+
+.dark .anime-character .character-child, .dark .anime-staff .staff-child {
+  background-color: rgba(13, 26, 97, 0.50);
+}
+
+.dark .anime-character .character-child:nth-child(3),
+.dark .anime-character .character-child:nth-child(4),
+.dark .anime-character .character-child:nth-child(7),
+.dark .anime-character .character-child:nth-child(8),
+.dark .anime-staff .staff-child:nth-child(3),
+.dark .anime-staff .staff-child:nth-child(4) {
+  background-color: rgba(43, 59, 142, 0.50);
+}
+
+.dark .person .person-body .right-part .person-staff-anime,
+.dark .staff .staff-body .staff-right .staff-section .character-children:nth-child(2n),
+.dark .staff .staff-body .staff-right .staff-section .staff-children {
+  background-color: rgba(43, 59, 142, 0.50);
+}
+
+.dark .person-anime,
+.dark .person .person-body .right-part .person-staff-anime:nth-child(2n),
+.dark .staff .staff-body .staff-right .staff-section .character-children,
+.dark .staff .staff-body .staff-right .staff-section .staff-children:nth-child(2n) {
+  background-color: rgba(13, 26, 97, 0.50);
+}
+
+.dark .person-anime:nth-child(2n) {
+  background-color: rgba(60, 77, 172, 0.54);
+}
+
+.dark .anime-details > .details-body > .right-part > .section-header > .trailer-container {
+  background-color: rgba(0, 0, 0, 0.7);
+
+  svg {
+    background-color: #5f5f5f;
+  }
+}
+
+.dark .home {
+  .home-header {
+    background-color: #3c3c3c;
+
+    input {
+      background-color: gray;
+      border: 2px solid #c8c7c7;
+    }
+
+    input::placeholder {
+      color: #c1c0c0;
+    }
+  }
+
+  .image-info-section {
+    .right-side {
+      .image-masonry-grid {
+        img:hover {
+          box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.8);
+        }
+      }
+    }
+  }
+
+  .news-part {
+    .news {
+      .news-child {
+        background-color: rgb(37, 27, 37);
+      }
+
+      .news-child:hover {
+        box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+
+  .quotes-part {
+    div {
+      background-color: #171010;
+    }
+
+    div:hover {
+      box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.8);
+    }
+  }
+}
+
+.dark .home-animes {
+  .anime-child {
+    background-color: #182025;
+  }
+
+  .anime-child:hover {
+    box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.8);
+  }
+}
+
+.dark .not-found .not {
+  background-color: #413535;
+}
+
+.dark .producer-navigation span:hover {
+  background-color: #465766;
+}

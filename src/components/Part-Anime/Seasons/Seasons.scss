@@ -1,0 +1,52 @@
+.seasons-container {
+  width: 70%;
+  margin: 100px auto 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    width: 100%;
+    margin: 10px 0;
+    padding: 5px;
+
+    text-align: center;
+    font-size: 1.3rem;
+    background-color: rgba(160, 146, 146, 0.25);
+    border-radius: 50%;
+  }
+
+  .seasons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .season-child {
+      margin-bottom: 30px;
+
+      a {
+        width: 200px;
+        padding: 10px;
+
+        font-size: 18px;
+        text-decoration: none;
+        border-radius: 10%;
+        border: 1px solid rgba(195, 193, 193, 0.67);
+        text-transform: capitalize;
+
+        display: flex;
+        justify-content: center;
+      }
+
+      a:hover {
+        background-color: rgba(195, 193, 193, 0.5);
+      }
+    }
+  }
+
+}
+
+.seasons-footer {
+  height: 11vh;
+  background-color: #f1cb2a;
+}

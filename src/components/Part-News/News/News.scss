@@ -1,0 +1,26 @@
+.news-container {
+  min-height: 68.5vh;
+  width: 75%;
+  margin: 100px auto 15px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.news-footer {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    padding: 7px 12px;
+    background-color: #d5d5b0;
+    color: #000;
+  }
+
+  button:hover {
+    background-color: #e6e63c;
+  }
+}

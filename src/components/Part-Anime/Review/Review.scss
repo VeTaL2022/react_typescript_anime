@@ -1,0 +1,275 @@
+.review {
+  min-height: 66.5vh;
+  @media (min-width: 785px) {
+    h4 {
+      font-size: 1.2rem;
+    }
+    .anime-title a {
+      font-size: 15px;
+    }
+  }
+  @media (max-width: 784px) {
+    width: 80%;
+    h4 {
+      font-size: 1.3rem;
+      text-align: center;
+    }
+    .anime-title {
+      padding: 10px 0;
+      border-bottom: 1px solid dimgray;
+      text-align: center;
+
+      a {
+        font-size: 17px;
+      }
+    }
+  }
+
+  width: 75%;
+  margin: 100px auto 30px;
+
+  h4 {
+    margin-bottom: 5px;
+    border-bottom: 1px solid dimgrey;
+  }
+
+  .anime-title {
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    span {
+      font-size: 13px;
+    }
+  }
+
+  .review-container {
+    @media (min-width: 785px) {
+      margin-top: 10px;
+      display: flex;
+      .right {
+        margin-left: 10px;
+
+        .user {
+          span {
+            font-size: 14px;
+          }
+        }
+
+        .tags {
+          span {
+            svg {
+              font-size: 19px;
+            }
+
+            i {
+              font-size: 13.5px;
+            }
+          }
+        }
+
+        .first-text-review, .text-review {
+          p {
+            font-size: 14px;
+
+            img {
+              height: 100px;
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: 784px) {
+      margin-top: 20px;
+      .left {
+        display: none;
+      }
+      .right {
+        .user {
+          a {
+            font-size: 17px;
+          }
+
+          span {
+            font-size: 15px;
+          }
+        }
+
+        .tags {
+          span {
+            svg {
+              font-size: 20px;
+            }
+
+            i {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+      .first-text-review, .text-review {
+        p {
+          font-size: 15.5px;
+
+          img {
+            height: 130px;
+          }
+        }
+      }
+      .review-rating {
+        svg {
+          font-size: 27px;
+        }
+
+        span {
+          font-size: 17px;
+        }
+      }
+      .total-reaction {
+        font-size: 18px;
+      }
+    }
+
+    .left {
+      width: 70px;
+
+      img {
+        width: 70px;
+      }
+    }
+
+    .right {
+      .user {
+        display: flex;
+        justify-content: space-between;
+
+        a {
+          text-decoration: none;
+        }
+
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .tags {
+        margin-top: 5px;
+
+        span {
+          display: flex;
+          align-items: flex-end;
+
+          i {
+            padding-left: 2px;
+            font-style: normal;
+          }
+        }
+      }
+
+      .first-text-review {
+        margin-top: 20px;
+
+        p {
+          padding: 0;
+          margin-bottom: 0;
+          text-align: left;
+
+          img {
+            float: right;
+            margin: 0 0 0 10px;
+            object-fit: cover;
+          }
+        }
+
+      }
+
+      .text-review {
+        p {
+          padding: 0;
+          margin-top: 10px;
+          text-align: left;
+        }
+      }
+
+      .review-rating {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+
+        span {
+          margin-left: 5px;
+        }
+      }
+
+      .reaction {
+        @media (min-width: 785px) {
+          svg {
+            font-size: 20px;
+          }
+          span {
+            padding: 7px 5px;
+
+            i {
+              font-size: 14px;
+            }
+
+            b {
+              font-size: 13px;
+            }
+          }
+        }
+        @media (max-width: 784px) {
+          display: block;
+          height: auto;
+          svg {
+            font-size: 22px;
+          }
+          span {
+            padding: 10px 8px;
+            margin-top: 5px;
+
+            b {
+              font-size: 15px;
+            }
+          }
+        }
+        height: 60px;
+        margin: 15px 0;
+        border-radius: 3px;
+        background-color: rgba(229, 229, 189, 0.75);
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        span {
+          min-width: 110px;
+          height: 15px;
+
+          border: 1px solid darkgray;
+          background-color: rgba(246, 237, 237, 0.9);
+          border-radius: 4px;
+
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+
+          i {
+            color: dimgrey;
+            font-style: normal;
+            font-family: sans-serif;
+          }
+
+          b {
+            color: dimgrey;
+            font-family: Verdana, Arial, sans-serif;
+          }
+        }
+      }
+    }
+  }
+}

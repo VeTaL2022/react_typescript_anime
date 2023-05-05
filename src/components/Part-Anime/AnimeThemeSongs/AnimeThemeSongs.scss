@@ -1,0 +1,63 @@
+.anime-theme-songs {
+  margin-top: 30px;
+
+  .double-section {
+    @media (min-width: 785px) {
+      display: flex;
+      justify-content: space-between;
+
+      div {
+        width: 48.6%;
+
+        h4 {
+          font-size: 14.5px;
+        }
+
+        span {
+          font-size: 13.5px;
+        }
+      }
+    }
+    @media (max-width: 784px) {
+      div {
+        h4 {
+          font-size: 17px;
+          text-align: center;
+        }
+
+        span {
+          text-align: center;
+          font-size: 15px;
+        }
+      }
+    }
+
+    div {
+      margin: 0 0 7px 8px;
+      padding-bottom: 7px;
+
+      h4 {
+        padding: 0 0 5px 0;
+        margin: 5px 0 8px 0;
+        border-bottom: 1px solid dimgray;
+      }
+
+      span {
+        margin-top: 5px;
+        margin-left: 3px;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  .more-less-button {
+    display: flex;
+    justify-content: flex-end;
+
+    span {
+      cursor: pointer;
+      font-size: 14px;
+    }
+  }
+}

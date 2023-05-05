@@ -1,0 +1,49 @@
+.home-recs {
+  @media (min-width: 785px) {
+    h4 {
+      font-size: 15px;
+    }
+  }
+  @media (max-width: 784px) {
+    width: 97%;
+    margin: 20px auto 0;
+    h4 {
+      font-size: 14px;
+      width: 50%;
+    }
+  }
+
+  width: 92%;
+  margin: 30px auto 0;
+
+  .home-recs-header {
+    margin: 0 10px;
+    border-bottom: 1px solid gray;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h4 {
+      margin: 0;
+      background: none;
+      border-top: none;
+    }
+
+    span {
+      @media (max-width: 784px) {
+        a {
+          font-size: 17px;
+        }
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

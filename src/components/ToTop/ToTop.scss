@@ -1,0 +1,22 @@
+.scroll-up {
+  padding: 10px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  position: fixed;
+  bottom: 35px;
+  right: 30px;
+}
+
+.scroll-up:hover {
+  background-color: cadetblue;
+}
+
+@media (max-width: 784px) {
+  .scroll-up {
+    padding: 8px 9px;
+    right: 0;
+    bottom: 55px;
+  }
+}

@@ -1,0 +1,27 @@
+.quote-container {
+  width: auto;
+  max-width: 100%;
+  padding: 15px;
+
+  background-color: #fff;
+  border-radius: 5px;
+
+  span {
+    margin: 15px 0 0 0;
+    text-align: right;
+    white-space: pre-wrap;
+
+    overflow-wrap: break-word;
+    line-height: 1.6;
+    display: block;
+  }
+
+  .expanded {
+    font-size: 15px;
+    cursor: pointer;
+  }
+}
+
+.quote-container:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}

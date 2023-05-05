@@ -1,0 +1,178 @@
+.sidebar-item {
+  transition: 850ms;
+}
+
+.sidebar-item.open {
+  background-color: #ffe56b;
+
+  .sidebar-content {
+    display: block;
+  }
+
+  .father {
+    background-color: #f3d748;
+  }
+}
+
+.sidebar-content {
+  margin-left: 30px;
+  display: none;
+
+  .nav-text {
+    //height: 40px;
+    padding: 5px 0;
+  }
+
+  @media (max-width: 784px) {
+    .nav-text {
+      height: 50px;
+    }
+    span {
+      font-size: 20px;
+    }
+  }
+  @media (max-width: 380px) {
+    .nav-text {
+      height: 35px;
+    }
+  }
+  @media (min-width: 785px) {
+    .nav-text {
+      height: 40px;
+    }
+    span {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 784px) {
+  .father {
+    height: 60px;
+
+    div {
+      padding: 0 50px;
+      font-size: 24px;
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .father {
+    height: 50px;
+  }
+}
+
+@media (min-width: 785px) {
+  .father {
+    height: 50px;
+
+    div {
+      padding: 0 30px;
+      font-size: 18px;
+    }
+  }
+}
+
+.father {
+  div {
+    height: 100%;
+    //padding: 0 30px;
+
+    cursor: pointer;
+    //font-size: 18px;
+
+    display: flex;
+    align-items: center;
+  }
+
+  @media (max-width: 784px) {
+    .father-icon {
+      font-size: 35px;
+    }
+  }
+  @media (min-width: 785px) {
+    .father-icon {
+      font-size: 28px;
+    }
+  }
+
+  .father-icon {
+    //font-size: 28px;
+    position: absolute;
+    right: 20px;
+  }
+}
+
+.father:hover {
+  background-color: #f4db4a;
+}
+
+@media (max-width: 784px) {
+  .nav-text {
+    padding: 5px 0;
+    height: 60px;
+
+    a {
+      font-size: 24px;
+      padding: 0 50px;
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-text {
+    height: 40px;
+  }
+}
+
+@media (min-width: 785px) {
+  .nav-text {
+    padding: 8px 0;
+    height: 50px;
+
+    a {
+      font-size: 18px;
+      padding: 0 30px;
+    }
+  }
+}
+
+.nav-text {
+  //height: 50px;
+  list-style: none;
+
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  a {
+    width: 95%;
+    height: 100%;
+    //padding: 0 30px;
+
+    text-decoration: none;
+    //font-size: 18px;
+
+    display: flex;
+    align-items: center;
+  }
+
+  a:hover {
+    background-color: #f4db4a;
+  }
+}
+
+@media (max-width: 784px) {
+  .icons {
+    margin-bottom: 3px;
+
+    svg {
+      font-size: 28px;
+    }
+  }
+}
+
+.icons {
+  padding: 0 15px 3px 0;
+}
