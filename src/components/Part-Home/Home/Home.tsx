@@ -34,7 +34,7 @@ export const Home: FC = () => {
     useEffect(() => {
         dispatch(quoteActions.getRandom());
         dispatch(quoteActions.getAllRandom());
-        dispatch(animeActions.getTop({page: 1, filter: 'airing', limit: 12, type: ''}))
+        dispatch(animeActions.getTop({page: 1, filter: 'airing', limit: 14, type: ''}))
         dispatch(imageActions.getAllByCategory({category: randomCategory}));
         dispatch(newsActions.getAll({
             q: 'anime',

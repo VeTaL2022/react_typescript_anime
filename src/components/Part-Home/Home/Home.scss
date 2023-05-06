@@ -287,8 +287,12 @@ p {
         }
       }
       .anime-airing-part-full {
-        width: 92%;
-        margin-left: 56px;
+
+        margin-left: 35px;
+
+        .top-airing {
+          width: 130px;
+        }
       }
       .anime-airing-part {
         width: 60%;

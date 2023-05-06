@@ -1,3 +1,9 @@
+@media (min-width: 785px) {
+  .nav-menu {
+    width: 200px;
+  }
+}
+
 @media (max-width: 784px) {
   .nav-menu {
     width: 70vw;
@@ -10,15 +16,8 @@
   }
 }
 
-@media (min-width: 785px) {
-  .nav-menu {
-    width: 200px;
-  }
-}
-
 .nav-menu {
-  //width: 200px;
-  height: 100vh;
+  min-height: 100vh;
 
   background-color: #fff;
   transition: 850ms;

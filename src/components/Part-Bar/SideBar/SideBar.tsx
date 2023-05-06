@@ -29,7 +29,7 @@ export const SideBar: FC<IProps> = ({sideBar, showSideBar}) => {
                                                                           hideSideBar={showSideBar}/>)}
                     </ul>
 
-                    <Link to={'https://github.com/VeTaL2022/react_native_tom_macdonald_app'} target={'_blank'}
+                    <Link to={'https://github.com/VeTaL2022/react_typescript_anime'} target={'_blank'}
                           className={'github'}>
                         <div>
                             <GitHub/>
