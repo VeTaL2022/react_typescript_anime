@@ -185,10 +185,19 @@
           position: fixed;
           left: 0;
           top: 0;
+          z-index: 3;
 
           .trailer-video {
-            width: 75%;
-            height: 75%;
+            @media (min-width: 785px) {
+              height: 75%;
+              width: 75%;
+            }
+            @media (max-width: 784px) {
+              width: 85%;
+              height: 30%;
+              top: 0;
+              bottom: 0;
+            }
             margin: auto;
             top: 18.5%;
             background-color: #c3c1c1;

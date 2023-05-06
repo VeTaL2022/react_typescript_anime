@@ -26,11 +26,11 @@ const initialState: IState = {
     error: {error: ''},
 }
 
-const getAll = createAsyncThunk<INewsResponse, { q: string, language: string, sortBy: string, page: number, pageSize: number, searchIn: string, apiKey: string }>(
+const getAll = createAsyncThunk<INewsResponse, { q: string, lang: string, sort_by: string, page: number, page_size: number, search_in: string }>(
     'newsSlice/getAll',
-    async ({q, language, sortBy, page, pageSize, searchIn, apiKey}, {rejectWithValue}) => {
+    async ({q, lang, sort_by, page, page_size, search_in}, {rejectWithValue}) => {
         try {
-            const {data} = await newsService.getAll(q, language, sortBy, page, pageSize, searchIn, apiKey);
+            const {data} = await newsService.getAll(q, lang, sort_by, page, page_size, search_in);
             return data;
         } catch (e) {
             const err = e as AxiosError;
@@ -56,7 +56,7 @@ const newsSlice = createSlice({
             .addCase(getAll.fulfilled, (state, action: PayloadAction<INewsResponse>) => {
                 state.status = action.payload.status;
                 state.articles = [...state.articles, ...action.payload.articles];
-                state.totalResults = action.payload.totalResults;
+                state.totalResults = action.payload.total_hits;
                 state.loading = false;
             })
             .addCase(getAll.rejected, (state, action) => {

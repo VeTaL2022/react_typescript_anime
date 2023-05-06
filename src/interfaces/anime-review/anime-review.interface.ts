@@ -63,4 +63,7 @@ export interface IAnimeReview {
 export interface IAnimeReviewResponse {
     pagination: Pagination,
     data: IAnimeReview[],
+    status: number,
+    message: string,
+    report_url: string
 }

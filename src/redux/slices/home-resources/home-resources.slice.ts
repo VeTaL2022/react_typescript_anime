@@ -20,7 +20,7 @@ interface IState {
 }
 
 const initialState: IState = {
-    reviewData: {data: [], pagination: {last_visible_page: 1, has_next_page: true}},
+    reviewData: {data: [], pagination: {last_visible_page: 1, has_next_page: true}, status:0, message: '', report_url: ''},
     reviewExpand: [],
 
     recsData: {data: [], pagination: {last_visible_page: 1, has_next_page: true}},

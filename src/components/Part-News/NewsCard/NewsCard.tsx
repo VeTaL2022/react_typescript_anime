@@ -5,10 +5,10 @@ import {IArticle} from "../../../interfaces";
 import './NewsCard.scss';
 
 export const NewsCard: FC<{ article: IArticle }> = ({article}) => {
-    const webSiteURL = article.url;
+    const webSiteURL = article.clean_url;
     const website = webSiteURL?.replace('http://', 'https://')?.split('https://')?.pop()?.split('/')[0];
 
-    const publishedDate = new Date(article.publishedAt);
+    const publishedDate = new Date(article.published_date);
     const formattedDateTime = publishedDate.toLocaleString('en-GB', {
         day: '2-digit',
         month: '2-digit',
@@ -22,10 +22,10 @@ export const NewsCard: FC<{ article: IArticle }> = ({article}) => {
     };
 
     return (
-        <a href={article.url} target={'_blank'} className={'article-container'}>
+        <a href={article.link} target={'_blank'} className={'article-container'}>
             <div className={'article-image'}>
                 <img
-                    src={article.urlToImage || imageNotFound}
+                    src={article.media || imageNotFound}
                     alt={article.title}
                     onError={handleImageError}
                 />
@@ -34,13 +34,13 @@ export const NewsCard: FC<{ article: IArticle }> = ({article}) => {
                 <div className={'article-source'}>
                     <img
                         src={`https://www.google.com/s2/favicons?domain=${website}`}
-                        alt={article.source.name}/>
-                    <span>{article.source.name}</span>
+                        alt={article.rights}/>
+                    <span>{article.rights}</span>
                 </div>
                 <div className={'article-title'}>
                     <h5>{article.title}</h5>
                 </div>
-                <span className={'article-description'}>{article.description}</span>
+                <span className={'article-description'}>{article.summary}</span>
                 <div>
                     <small><b>Published At:</b> {formattedDateTime}</small>
                 </div>

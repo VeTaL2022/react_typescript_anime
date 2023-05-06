@@ -19,7 +19,13 @@ interface IState {
 const initialState: IState = {
     characterData: {data: []},
     staffData: {data: []},
-    reviewData: {data: [], pagination: {last_visible_page: 1, has_next_page: false}},
+    reviewData: {
+        data: [],
+        pagination: {last_visible_page: 1, has_next_page: false},
+        status: 0,
+        message: '',
+        report_url: ''
+    },
     loading: false,
     error: {error: ''},
 };

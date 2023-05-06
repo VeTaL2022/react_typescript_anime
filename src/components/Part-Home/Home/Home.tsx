@@ -38,12 +38,11 @@ export const Home: FC = () => {
         dispatch(imageActions.getAllByCategory({category: randomCategory}));
         dispatch(newsActions.getAll({
             q: 'anime',
-            language: 'en',
-            sortBy: 'publishedAt',
+            lang: 'en',
+            sort_by: 'date',
             page: 1,
-            pageSize: 5,
-            searchIn: 'title',
-            apiKey: import.meta.env.VITE_NEWS_API_KEY
+            page_size: 5,
+            search_in: 'title',
         }));
     }, [dispatch]);
 
@@ -69,7 +68,6 @@ export const Home: FC = () => {
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         setSearchValue(event.target.value);
     }
-
     return (
         loading || load ? <Loader height={100}/> :
             <>
@@ -146,13 +144,13 @@ export const Home: FC = () => {
                                         {news.map((n, i) =>
                                             <Link to={'/news'} key={i} className={'news-child'}>
                                                 <img
-                                                    src={n.urlToImage || imageNotFound}
-                                                    alt={n.title.slice(0,25) + '...'}/>
+                                                    src={n.media || imageNotFound}
+                                                    alt={n.title.slice(0, 25) + '...'}/>
                                                 <div>
                                                     <span><b>{n.title.length < 80 ? n.title : n.title.slice(0, 80) + '...'}</b></span>
                                                     <span><img
-                                                        src={`https://www.google.com/s2/favicons?domain=${articleURL(n.url)}`}
-                                                        alt=""/>{n.source.name}</span>
+                                                        src={`https://www.google.com/s2/favicons?domain=${articleURL(n.clean_url)}`}
+                                                        alt=""/>{n.rights}</span>
                                                 </div>
                                             </Link>)}
                                     </div>

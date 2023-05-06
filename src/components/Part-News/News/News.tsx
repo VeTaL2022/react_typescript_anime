@@ -18,12 +18,11 @@ export const News: FC = () => {
     useEffect(() => {
         dispatch(newsActions.getAll({
             q: 'anime',
-            language: 'en',
-            sortBy: 'publishedAt',
+            lang: 'en',
+            sort_by: 'date',
             page: currentPage,
-            pageSize: 15,
-            searchIn: 'title',
-            apiKey: import.meta.env.VITE_NEWS_API_KEY
+            page_size: 15,
+            search_in: 'title',
         }));
     }, [currentPage]);
 

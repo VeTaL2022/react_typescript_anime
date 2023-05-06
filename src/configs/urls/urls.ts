@@ -13,7 +13,7 @@ const urls = {
     producers: '/producers', // all studios
     characters: '/characters', // anime characters
     people: '/people', // people
-    everything: '/everything', // news
+    search: '/search', // news
     quotes: '/quotes', // quotes
     random: '/random', // random quotes
     single: '/sfw', // single image

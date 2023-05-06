@@ -286,6 +286,10 @@ p {
           }
         }
       }
+      .anime-airing-part-full {
+        width: 92%;
+        margin-left: 56px;
+      }
       .anime-airing-part {
         width: 60%;
         margin-left: 0;
@@ -295,6 +299,7 @@ p {
         margin-left: 0;
       }
     }
+
     @media (max-width: 784px) {
       .hr {
         width: 94.5%;
@@ -318,7 +323,7 @@ p {
           }
         }
       }
-      .anime-airing-part {
+      .anime-airing-part, .anime-airing-part-full {
         width: 100%;
         margin-left: 10px;
       }
@@ -429,13 +434,12 @@ p {
       div {
         width: 91%;
         margin: 5px auto 10px;
-
         border: 1px solid #9ba7b2;
         border-radius: 5px;
         background-color: lightgoldenrodyellow;
 
         p {
-          padding-top: 3px;
+          padding: 3px 3px 0 3px;
           font-size: 14px;
 
           q {
