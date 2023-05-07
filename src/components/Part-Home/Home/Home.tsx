@@ -74,7 +74,7 @@ export const Home: FC = () => {
                 <div className={'home'}>
                     <div className={'home-header'}>
                         <h4>
-                            Welcome to AniHub
+                            Welcome to AniXtra
                         </h4>
                         <form onSubmit={handleSubmit}>
                             <div style={{position: 'relative'}}>

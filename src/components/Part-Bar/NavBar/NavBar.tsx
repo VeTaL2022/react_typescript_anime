@@ -13,7 +13,7 @@ export const NavBar: FC<{ showSideBar: () => void }> = ({showSideBar}) => {
             </Link>
             <h2>
                 <Link to={'home'} className={'main-title'}>
-                    AniHub
+                    AniXtra
                 </Link>
             </h2>
         </div>
