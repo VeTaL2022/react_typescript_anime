@@ -13,6 +13,6 @@ export const axiosService_QuoteAPI = axios.create({baseURL: QuoteAPI_URL});
 export const axiosService_NewsAPI = axios.create({baseURL: NewsAPI_URL});
 
 axiosService_NewsAPI.interceptors.request.use(config => {
-    config.headers['x-api-key'] = import.meta.env.VITE_NEWS_API_KEY;
+    config.headers['Ocp-Apim-Subscription-Key'] = import.meta.env.VITE_NEWS_API_KEY;
     return config;
 });

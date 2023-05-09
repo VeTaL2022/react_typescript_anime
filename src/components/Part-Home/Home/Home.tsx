@@ -4,7 +4,7 @@ import {Search} from "@mui/icons-material";
 import Masonry from "react-masonry-css";
 
 import {animeActions, imageActions, newsActions, quoteActions} from "../../../redux";
-import {image_category, most_popular_anime} from "../../../configs";
+import {image_categories, most_popular_anime} from "../../../configs";
 import {useAppDispatch, useAppSelector} from "../../../hooks";
 import imageNotFound from '../../../assets/ImageNotFound.png';
 import {HomeReviews} from "../HomeReviews";
@@ -15,14 +15,14 @@ import {Footer} from "../../Footer";
 import {ToTop} from "../../ToTop";
 import './Home.scss';
 
-const randomCategory = image_category[Math.floor(Math.random() * image_category.length)];
+const randomCategory = image_categories[Math.floor(Math.random() * image_categories.length)];
 export const Home: FC = () => {
     const {quote, loading, error, news, images, load, data, quotes} = useAppSelector((state) => ({
         quotes: state.quoteReducer.quotes,
         quote: state.quoteReducer.quote,
         loading: state.quoteReducer.loading,
         error: state.quoteReducer.error,
-        news: state.newsReducer.articles,
+        news: state.newsReducer.news,
         images: state.imageReducer.image,
         load: state.imageReducer.loading,
         data: state.animeReducer.data,
@@ -38,11 +38,11 @@ export const Home: FC = () => {
         dispatch(imageActions.getAllByCategory({category: randomCategory}));
         dispatch(newsActions.getAll({
             q: 'anime',
-            lang: 'en',
-            sort_by: 'date',
-            page: 1,
-            page_size: 5,
-            search_in: 'title',
+            sortBy: 'date',
+            setLang: 'en',
+            safeSearch: 'strict',
+            count: 7,
+            offset: 0,
         }));
     }, [dispatch]);
 
@@ -50,6 +50,7 @@ export const Home: FC = () => {
         dispatch(quoteActions.reset());
         dispatch(newsActions.reset());
     }, [dispatch]);
+
     const articleURL = (url: string) => {
         return url.split('https://')?.pop()?.split('/')[0];
     };
@@ -144,13 +145,13 @@ export const Home: FC = () => {
                                         {news.map((n, i) =>
                                             <Link to={'/news'} key={i} className={'news-child'}>
                                                 <img
-                                                    src={n.media || imageNotFound}
-                                                    alt={n.title.slice(0, 25) + '...'}/>
+                                                    src={n.image?.thumbnail.contentUrl || imageNotFound}
+                                                    alt={n.name.slice(0, 25) + '...'}/>
                                                 <div>
-                                                    <span><b>{n.title.length < 80 ? n.title : n.title.slice(0, 80) + '...'}</b></span>
+                                                    <span><b>{n.name.length < 75 ? n.name : n.name.slice(0, 75) + '...'}</b></span>
                                                     <span><img
-                                                        src={`https://www.google.com/s2/favicons?domain=${articleURL(n.clean_url)}`}
-                                                        alt=""/>{n.rights}</span>
+                                                        src={`https://www.google.com/s2/favicons?domain=${articleURL(n.url)}`}
+                                                        alt=""/>{n.provider[0]?.name}</span>
                                                 </div>
                                             </Link>)}
                                     </div>
@@ -172,11 +173,11 @@ export const Home: FC = () => {
                             <>
                                 <div className={'quotes-part'}>
                                     <p><Link to={'/quotes'}>Random Quotes</Link></p>
-                                    {quotes.slice(0, 5).map((q, i) =>
+                                    {quotes.slice(0, 4).map((q, i) =>
                                         <div key={i}>
                                             <span>({q.anime})</span>
                                             <p>
-                                                <q><b>{q.quote.length < 100 ? q.quote : q.quote.slice(0, 100) + '...'}</b></q>
+                                                <q><b>{q.quote.length < 130 ? q.quote : q.quote.slice(0, 130) + '...'}</b></q>
                                             </p>
                                             <p>by {q.character}</p>
                                         </div>)}

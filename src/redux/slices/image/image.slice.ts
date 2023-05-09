@@ -2,7 +2,7 @@ import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {AxiosError} from "axios";
 
 import {ImageInterface} from "../../../interfaces";
-import {image_category} from "../../../configs";
+import {image_categories} from "../../../configs";
 import {imageService} from "../../../services";
 
 interface IError {
@@ -20,7 +20,7 @@ interface IState {
 const initialState: IState = {
     image: {files: []},
     clickedImage: '',
-    randomCategory: image_category[Math.floor(Math.random() * image_category.length)],
+    randomCategory: image_categories[Math.floor(Math.random() * image_categories.length)],
     error: {error: ''},
     loading: false,
 }

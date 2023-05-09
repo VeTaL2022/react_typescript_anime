@@ -1,4 +1,4 @@
-export const image_category = [
+export const image_categories = [
     'waifu',
     'neko',
     'shinobu',

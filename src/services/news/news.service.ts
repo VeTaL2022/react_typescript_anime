@@ -3,14 +3,14 @@ import {INewsResponse} from "../../interfaces";
 import {urls} from "../../configs";
 
 export const newsService = {
-    getAll: (q: string, lang: string, sort_by: string, page: number, page_size: number, search_in: string): AxiosResp<INewsResponse> => axiosService_NewsAPI.get(urls.search, {
+    getAll: (q: string, safeSearch: string, setLang: string, sortBy: string, count: number, offset: number): AxiosResp<INewsResponse> => axiosService_NewsAPI.get(urls.search, {
         params: {
             q,
-            lang,
-            sort_by,
-            page,
-            page_size,
-            search_in,
+            safeSearch,
+            setLang,
+            sortBy,
+            count,
+            offset,
         }
     })
-}
+};

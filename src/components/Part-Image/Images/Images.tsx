@@ -4,7 +4,7 @@ import Masonry from 'react-masonry-css';
 import {FC, useEffect} from "react";
 
 import {useAppDispatch, useAppSelector} from "../../../hooks";
-import {image_category} from "../../../configs";
+import {image_categories} from "../../../configs";
 import {imageActions} from "../../../redux";
 import {Loader} from "../../Loader";
 import {Image} from "../Image";
@@ -29,7 +29,7 @@ export const Images:FC = () => {
     }
 
     useEffect(() => {
-        handleRandomCategory(image_category[Math.floor(Math.random() * image_category.length)]);
+        handleRandomCategory(image_categories[Math.floor(Math.random() * image_categories.length)]);
         handleReplayClick();
     }, [dispatch, selectedCategory]);
 

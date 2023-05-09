@@ -1,6 +1,6 @@
 export * from './urls';
 export * from './side_bar_data';
-export * from './image_category';
+export * from './image_categories';
 export * from './material_ui_switch';
 export * from './search_ranking_data';
 export * from './search_genre_data';

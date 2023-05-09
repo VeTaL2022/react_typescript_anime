@@ -18,8 +18,8 @@ import {animeActions, animeResourcesActions} from "../../../redux";
 import {useAppDispatch, useAppSelector} from "../../../hooks";
 import {formatDate} from "../AnimeReviews";
 import {Loader} from "../../Loader";
-import './Review.scss';
 import {Footer} from "../../Footer";
+import './Review.scss';
 
 export const Review: FC = () => {
     const {selectedAnime, selectedReview} = useParams();

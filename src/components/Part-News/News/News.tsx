@@ -10,22 +10,20 @@ import {ToTop} from "../../ToTop";
 import './News.scss';
 
 export const News: FC = () => {
-    const {articles, currentPage} = useAppSelector(({newsReducer}) => newsReducer);
+    const {news, offset, totalResults, error} = useAppSelector(({newsReducer}) => newsReducer);
     const dispatch = useAppDispatch();
-
     const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
         dispatch(newsActions.getAll({
             q: 'anime',
-            lang: 'en',
-            sort_by: 'date',
-            page: currentPage,
-            page_size: 15,
-            search_in: 'title',
-        }));
-    }, [currentPage]);
-
+            sortBy: 'date',
+            setLang: 'en',
+            safeSearch: 'strict',
+            count: 17,
+            offset: offset,
+        }))
+    }, [offset]);
 
     useEffect(() => {
         dispatch(newsActions.reset());
@@ -34,15 +32,27 @@ export const News: FC = () => {
         }, 1500);
     }, []);
 
+    const uniqueNews = Array.from(new Set(news.map(article => article.name))).map(name => {
+        return news.find(article => article.name === name);
+    });
+
     return (
         loading ? <Loader height={100}/> :
             <InfiniteScroll
                 loader={''}
-                hasMore={currentPage < 6} dataLength={articles.length}
-                next={() => dispatch(newsActions.setCurrentPage(currentPage + 1))}>
-                <div className={'news-container'} style={{marginBottom: currentPage !== 6 ? 15 : 20}}>
-                    {articles.map((article, index) => <NewsCard article={article} key={index}/>)}
+                hasMore={offset < 90} dataLength={totalResults}
+                next={() => dispatch(newsActions.setOffSet(offset + 15))}>
+                <div className={'news-container'} style={{marginBottom: offset < 90 ? 15 : 20}}>
+                    {error.error ? (<div style={{height: '60vh', display: 'flex',flexDirection: 'column', justifyContent: 'center'}}>
+                        <p>Status Code - {error.error.code}</p>
+                        <p>{error.error.message}</p>
+                    </div>) : (
+                        <>
+                            {uniqueNews.map((article, index) => <NewsCard article={article} key={index}/>)}
+                        </>
+                    )}
                 </div>
+
                 <Footer
                     info={'News anime presents news and current events in an entertaining way, covering various topics and offering unique perspectives.'}/>
                 <ToTop/>

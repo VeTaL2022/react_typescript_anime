@@ -228,7 +228,7 @@ export const AnimeDetails: FC = () => {
                             )}
 
                             <AnimeThemeSongs anime={anime}/>
-                            {reviewData.data.length <= 0 && (
+                            {reviewData.data.length === 0 && (
                                 <Button
                                     onClick={() => dispatch(animeResourcesActions.getReviewData({id: selectedId || ''}))}
                                     sx={{color: 'green-blue', margin: '20px auto 0', width: '100%', padding: '10px 0'}}
@@ -236,7 +236,7 @@ export const AnimeDetails: FC = () => {
                                     View Reviews
                                 </Button>
                             )}
-                            {reviewData?.data?.length > 0 && (
+                            {reviewData.data?.length > 0 && (
                                 <div className={'section'}>
                                     <h4>Reviews</h4>
                                     {reviewData && <AnimeReviews reviewData={reviewData} animeId={selectedId || ''}/>}

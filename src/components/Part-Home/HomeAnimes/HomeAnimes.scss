@@ -30,7 +30,6 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     scale: 0.95;
-    transition: 0.4s;
   }
 
   .anime-child {
@@ -60,6 +59,7 @@
         width: 65%;
         height: 100%;
         object-fit: cover;
+        transition: 0.4s;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
       }

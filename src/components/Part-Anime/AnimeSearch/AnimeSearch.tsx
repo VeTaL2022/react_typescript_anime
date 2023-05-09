@@ -15,7 +15,7 @@ export const AnimeSearch: FC = () => {
     useEffect(() => {
         setTimeout(() => {
             setLoading(false);
-        }, 1200);
+        }, 1000);
     }, []);
 
     return (

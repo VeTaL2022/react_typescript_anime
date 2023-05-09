@@ -107,14 +107,31 @@ $background_theme: #060b26;
   }
 }
 
-.dark .search-form__input {
-  color: $color_white;
-  background-color: dimgrey;
-  border: 1px solid gray;
+.dark .search-form {
+  .search-input {
+    color: $color_white;
+    background-color: dimgrey;
+    border: 1px solid gray;
+  }
+
+  .search-input::placeholder {
+    color: lightgray;
+  }
+
+  .search-icon {
+    background-color: #4f4e4e;
+  }
+
+  .search-icon.active {
+    background-color: #373535;
+  }
+  .search-icon:hover{
+    background-color: #4f4848;
+  }
 }
 
 .dark .anime-search-data, .dark .quotes-paper {
-  background-color: #898585;
+  background-color: #585656;
 }
 
 .dark .anime-search-data {
@@ -123,7 +140,7 @@ $background_theme: #060b26;
   }
 
   .anime-view {
-    background-color: rgb(77, 64, 64);
+    background-color: rgb(63, 60, 60);
   }
 }
 
@@ -142,25 +159,10 @@ $background_theme: #060b26;
   color: $color_white;
 }
 
-.dark .search-form__input::placeholder {
-  color: lightgray;
+.dark .paper-input::placeholder {
+  color: #E1E7F5;
 }
 
-.dark .search-form__button {
-  background-color: #2b3b8e;
-}
-
-.dark .search-form__button:hover {
-  background-color: #0d1a61;
-}
-
-.dark .search-form__clear {
-  background-color: #5f5f5f;
-}
-
-.dark .search-form__clear:hover {
-  background-color: #3e3c3c;
-}
 
 .dark .input-label {
   color: darkgray;
@@ -297,8 +299,8 @@ $background_theme: #060b26;
     background-color: #3c3c3c;
 
     input {
-      background-color: gray;
-      border: 2px solid #c8c7c7;
+      background-color: #6a6969;
+      border: 2px solid #4c4c4c;
     }
 
     input::placeholder {

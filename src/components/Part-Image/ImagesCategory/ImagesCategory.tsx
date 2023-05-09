@@ -2,7 +2,7 @@ import {FC, useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import {Button} from "@mui/material";
 
-import {image_category} from "../../../configs";
+import {image_categories} from "../../../configs";
 import {Loader} from "../../Loader";
 import {Footer} from "../../Footer";
 import './ImagesCategory.scss';
@@ -21,7 +21,7 @@ export const ImagesCategory: FC = () => {
             <>
                 <div className={'images-category-container'}>
                     <div className="category-buttons-container">
-                        {image_category.map((category, index) =>
+                        {image_categories.map((category, index) =>
                             <div key={index} className="category-button-wrapper">
                                 <Button fullWidth><Link to={category}>{category}</Link></Button>
                             </div>)}

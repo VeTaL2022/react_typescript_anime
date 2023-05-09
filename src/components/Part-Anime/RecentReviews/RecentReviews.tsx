@@ -132,10 +132,10 @@ export const RecentReviews: FC = () => {
                                 </div>)}
                         </>
                     ) : <div style={{
-                        height: '50vh',
+                        height: '60vh',
                         display: 'flex',
                         flexDirection: 'column',
-                        justifyContent: 'center'
+                        justifyContent: 'center',
                     }}>
                         <p>Status code - {reviewData.status}</p>
                         <p>{reviewData.message}</p>

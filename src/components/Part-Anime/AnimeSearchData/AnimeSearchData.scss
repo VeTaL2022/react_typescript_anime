@@ -1,0 +1,10 @@
+div {
+  .view-width {
+    @media (min-width: 785px) {
+      width: 42vw;
+    }
+    @media (max-width: 784px) {
+      width: 75vw;
+    }
+  }
+}

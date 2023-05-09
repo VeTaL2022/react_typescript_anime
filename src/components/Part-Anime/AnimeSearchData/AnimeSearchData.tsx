@@ -4,6 +4,7 @@ import {animeActions, animeStuffActions} from "../../../redux";
 import {useAppDispatch, useAppSelector} from "../../../hooks";
 import {AnimeSearchForm} from "../AnimeSearchForm";
 import {SearchData} from "../SearchData";
+import './AnimeSearchData.scss';
 
 export const AnimeSearchData: FC = () => {
     const {data, searchInput, formActive} = useAppSelector((state) => ({
@@ -30,9 +31,8 @@ export const AnimeSearchData: FC = () => {
             handleFormActive(false);
         }
     };
-
     useEffect(() => {
-        if (searchInput === '') {
+        if (searchInput.length === 0) {
             dispatch(animeActions.resetData());
         } else {
             dispatch(animeActions.getAllByName({
@@ -42,22 +42,20 @@ export const AnimeSearchData: FC = () => {
                 sfw: true,
             }));
         }
+        return () => {
+            dispatch(animeActions.resetData());
+        };
     }, [searchInput, dispatch]);
 
     const submit = (data: { search: string }) => {
         handleSearchInput(data.search);
         handleFormActive(true);
     };
-    useEffect(() => {
-        dispatch(animeActions.resetData());
-        dispatch(animeStuffActions.resetForm());
-    }, []);
 
     return (
-        <div onFocus={() => handleFormActive(true)} onBlur={handleBlur} ref={containerRef}
-             style={{width: '61%', margin: 'auto'}}>
-            <AnimeSearchForm onSubmit={submit} name={''} reset={true}/>
-            {formActive && (<SearchData data={data} searchInput={searchInput}/>)}
+        <div onFocus={() => handleFormActive(true)} ref={containerRef} onBlur={handleBlur} style={{margin: 'auto'}}>
+            <AnimeSearchForm onSubmit={submit} name={''} reset={true} viewWidth={'view-width'}/>
+            {formActive && (<SearchData data={data} searchInput={searchInput} viewWidth={'view-width'}/>)}
         </div>
     );
 };

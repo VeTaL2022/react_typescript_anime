@@ -6,9 +6,9 @@
     .recs-container {
       margin-bottom: 5px;
       display: flex;
-
       .recs-child {
         width: 50%;
+        overflow: hidden;
 
         a {
           font-size: 14px;
@@ -16,6 +16,10 @@
 
         img {
           width: 50px;
+          transition: 0.4s;
+        }
+        img:hover{
+          scale: 1.1;
         }
 
         .recs-left-side, .recs-right-side {

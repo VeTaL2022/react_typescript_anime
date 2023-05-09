@@ -1,36 +1,34 @@
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {AxiosError} from "axios";
 
-import {IArticle, INewsResponse} from "../../../interfaces";
+import {INews, INewsResponse} from "../../../interfaces";
 import {newsService} from "../../../services";
 
 interface IError {
-    error: string
+    error: { code: number, message: string }
 }
 
 interface IState {
-    status: string,
     totalResults: number,
-    articles: IArticle[],
-    currentPage: number;
+    news: INews[],
+    offset: number,
     loading: boolean,
     error: IError,
 }
 
 const initialState: IState = {
-    status: '',
     totalResults: 0,
-    articles: [],
-    currentPage: 1,
+    news: [],
+    offset: 0,
     loading: false,
-    error: {error: ''},
+    error: {error: {code: 0, message: ''}},
 }
 
-const getAll = createAsyncThunk<INewsResponse, { q: string, lang: string, sort_by: string, page: number, page_size: number, search_in: string }>(
+const getAll = createAsyncThunk<INewsResponse, { q: string, safeSearch: string, setLang: string, sortBy: string, count: number, offset: number }>(
     'newsSlice/getAll',
-    async ({q, lang, sort_by, page, page_size, search_in}, {rejectWithValue}) => {
+    async ({q, safeSearch, setLang, sortBy, count, offset}, {rejectWithValue}) => {
         try {
-            const {data} = await newsService.getAll(q, lang, sort_by, page, page_size, search_in);
+            const {data} = await newsService.getAll(q, safeSearch, setLang, sortBy, count, offset);
             return data;
         } catch (e) {
             const err = e as AxiosError;
@@ -44,8 +42,8 @@ const newsSlice = createSlice({
     initialState,
     reducers: {
         reset: () => initialState,
-        setCurrentPage: (state, action: PayloadAction<number>) => {
-            state.currentPage = action.payload;
+        setOffSet: (state, action: PayloadAction<number>) => {
+            state.offset = action.payload;
         }
     },
     extraReducers: builder =>
@@ -54,9 +52,8 @@ const newsSlice = createSlice({
                 state.loading = true;
             })
             .addCase(getAll.fulfilled, (state, action: PayloadAction<INewsResponse>) => {
-                state.status = action.payload.status;
-                state.articles = [...state.articles, ...action.payload.articles];
-                state.totalResults = action.payload.total_hits;
+                state.news = [...state.news, ...action.payload.value];
+                state.totalResults = action.payload.totalEstimatedMatches;
                 state.loading = false;
             })
             .addCase(getAll.rejected, (state, action) => {
@@ -65,8 +62,7 @@ const newsSlice = createSlice({
             })
 });
 
-const {reducer: newsReducer, actions: {reset, setCurrentPage}} = newsSlice;
-
-const newsActions = {getAll, reset, setCurrentPage};
+const {reducer: newsReducer, actions: {reset, setOffSet}} = newsSlice;
+const newsActions = {getAll, reset, setOffSet};
 
 export {newsActions, newsReducer};

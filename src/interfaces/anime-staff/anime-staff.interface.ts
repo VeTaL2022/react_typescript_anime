@@ -21,4 +21,3 @@ export interface IAnimeStaffPerson {
 export interface IAnimeStaffResponse {
     data: IAnimeStaffPerson[],
 }
-

@@ -43,7 +43,7 @@ export const Search: FC = () => {
                 <AnimeSearchForm onSubmit={(data) => {
                     setSearchInput(data.search);
                     navigate({search: `?name=${data.search}`});
-                }} name={query} reset={false}/>
+                }} name={query} reset={false} viewWidth={'view-width'}/>
 
                 {loading ? <Loader height={100}/> : (
                     <>

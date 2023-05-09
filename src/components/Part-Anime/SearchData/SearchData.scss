@@ -1,7 +1,5 @@
 .anime-search-data {
   @media (min-width: 785px) {
-    width: 36.5%;
-    right: 95px;
     .anime {
       .anime-info {
         span {
@@ -11,13 +9,11 @@
     }
     .anime:hover, .anime.last-hovered, .anime.last-hovered > img, .anime:hover > img {
       height: 80px;
-      background-color: #ededb2;
+      background-color: #f6f6b2;
     }
   }
 
   @media (max-width: 784px) {
-    width: 60%;
-    right: 80px;
     .anime {
       img {
         width: 20%;
@@ -29,28 +25,24 @@
         span {
           font-size: 10px;
         }
+
+        .anime-info-extra {
+          display: none;
+        }
       }
 
-      .anime-info-extra {
-        display: none;
-      }
     }
     .anime:hover, .anime.last-hovered, .anime.last-hovered > img, .anime:hover > img {
       height: 40px;
-      background-color: #ededb2;
+      background-color: #f6f6b2;
     }
   }
 
-  width: 36.2%;
-  margin: auto;
   background-color: #edeaea;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
 
   position: absolute;
-  top: 146px;
-  left: 0;
-  right: 99px;
 
   .anime {
     height: 40px;
@@ -75,9 +67,8 @@
     }
 
     .anime-info-extra {
-      margin-left: 5px;
-      margin-bottom: 12px;
-      margin-top: 5px;
+      margin: 5px 0 12px 5px;
+
       display: flex;
       flex-direction: column;
 
@@ -93,7 +84,7 @@
 
   .anime-view {
     height: 40px;
-    background-color: #efe2bf;
+    background-color: #d4d1dc;
     text-decoration: none;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -116,7 +107,7 @@
   }
 
   .anime-view:hover {
-    background-color: #ededb2;
+    background-color: #f6f6b2;
     cursor: pointer;
   }
 

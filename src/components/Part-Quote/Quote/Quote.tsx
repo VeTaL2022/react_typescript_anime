@@ -11,12 +11,15 @@ export const Quote: FC<{ quote: IQuote }> = ({quote: quoteData}) => {
         <div className={'quote-container'}>
             {quoteData.quote.length > 155 ? (
                     <>
-                        <cite>"{isExpanded ? quoteData.quote : (quoteData.quote.slice(0, 155) + "...")}"
+                        <cite>{isExpanded ? quoteData.quote : (quoteData.quote.slice(0, 155) + "...")}"
                             <b onClick={handleClick}
                                className={'expanded'}>{isExpanded ? " Show Less" : " Show More"}</b>
                         </cite>
                         <div style={{textAlign: 'right'}}>
-                                <span><i>- {quoteData.character}</i> <br/>
+                                <span style={{
+                                    color: 'rgba(1,150,200,0.8)',
+                                    fontWeight: 300
+                                }}><i>- {quoteData.character}</i> <br/>
                                 ({quoteData.anime})
                                 </span>
                         </div>
@@ -24,7 +27,7 @@ export const Quote: FC<{ quote: IQuote }> = ({quote: quoteData}) => {
                 ) :
                 <>
                     <cite>"{quoteData.quote}"</cite>
-                    <div style={{textAlign: 'right'}}>
+                    <div style={{textAlign: 'right', color: 'rgba(1,150,200,0.8)', fontWeight: 300}}>
                         <span><i>- {quoteData.character}</i></span>
                         ({quoteData.anime})
                     </div>

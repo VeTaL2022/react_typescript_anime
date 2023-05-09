@@ -5,9 +5,9 @@ import {Link} from "react-router-dom";
 import {search_producer_items} from "../../../configs";
 import {IProducer} from "../../../interfaces";
 import {Loader} from "../../Loader";
+import {Footer} from "../../Footer";
 import {ToTop} from "../../ToTop";
 import './Producers.scss';
-import {Footer} from "../../Footer";
 
 export const Producers: FC = () => {
     const [loading, setLoading] = useState<boolean>(true);
