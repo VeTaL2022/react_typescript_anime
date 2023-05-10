@@ -56,6 +56,8 @@
   padding: 13px;
   margin-bottom: 20px;
   cursor: pointer;
+  transition: 0.3s;
+
 
   background-color: #fff;
   border-radius: 8px;
@@ -113,7 +115,6 @@
 }
 
 .front-side:hover {
-  transform: scale(0.96);
+  scale: 0.96;
   box-shadow: 0 0 10px rgba(0, 0, 0, .6);
-  transition: 0.3s;
 }

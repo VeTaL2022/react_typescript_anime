@@ -55,7 +55,7 @@ export const Search: FC = () => {
                             <div className={'not-found'}>
                                 <div className={'not'}>
                                     <div>
-                                        <h2><b>Not Found!</b></h2>
+                                        <h2><b>No results found!</b></h2>
                                         <hr/>
                                         <img
                                             src={giffNotFound}

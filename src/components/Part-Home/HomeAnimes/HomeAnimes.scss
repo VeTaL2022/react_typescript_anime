@@ -49,6 +49,7 @@
 
     display: flex;
     flex-direction: column;
+    transition: 0.4s;
 
     .home-ani-header {
       height: 50%;
@@ -58,8 +59,8 @@
       img {
         width: 65%;
         height: 100%;
-        object-fit: cover;
         transition: 0.4s;
+        object-fit: cover;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
       }
@@ -75,7 +76,7 @@
       flex-direction: column;
 
       b {
-        padding: 3px;
+        padding: 0 4px;
         font-size: 13px;
       }
     }

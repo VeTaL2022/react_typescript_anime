@@ -12,6 +12,7 @@ interface IState {
     characterData: IAnimeCharacterResponse,
     staffData: IAnimeStaffResponse,
     reviewData: IAnimeReviewResponse,
+    isButtonClicked: boolean,
     loading: boolean,
     error: IError,
 }
@@ -26,6 +27,7 @@ const initialState: IState = {
         message: '',
         report_url: ''
     },
+    isButtonClicked: false,
     loading: false,
     error: {error: ''},
 };
@@ -74,6 +76,9 @@ const animeResourcesSlice = createSlice({
     initialState,
     reducers: {
         reset: () => initialState,
+        setIsButtonClicked: (state, action: PayloadAction<boolean>) => {
+            state.isButtonClicked = action.payload;
+        }
     },
     extraReducers: builder =>
         builder
@@ -114,8 +119,8 @@ const animeResourcesSlice = createSlice({
             })
 });
 
-const {reducer: animeResourcesReducer, actions: {reset}} = animeResourcesSlice;
+const {reducer: animeResourcesReducer, actions: {reset, setIsButtonClicked}} = animeResourcesSlice;
 
-const animeResourcesActions = {getCharacterData, getStaffData, getReviewData, reset};
+const animeResourcesActions = {getCharacterData, getStaffData, getReviewData, reset, setIsButtonClicked};
 
 export {animeResourcesActions, animeResourcesReducer};

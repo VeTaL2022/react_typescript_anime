@@ -45,11 +45,15 @@ export const SearchData: FC<IProps> = ({data, searchInput, viewWidth}) => {
                         <img src={anime.images.jpg.small_image_url} alt={anime.title}/>
 
                         {hoveredAnime === index ? (
-                            <div className={'anime-info-extra'}>
+                            <div className={window.innerWidth > 784 ? 'anime-info-extra' : 'anime-info'}>
                                 <span>{anime.title} <small>({anime.type})</small></span>
-                                <span>Aired: {convertDate(anime.aired.from)}</span>
-                                <span>Score: {anime.score}</span>
-                                <span>Status: {anime.status}</span>
+                                {window.innerWidth > 784 && (
+                                    <>
+                                        <span>Aired: {convertDate(anime.aired.from)}</span>
+                                        <span>Score: {anime.score}</span>
+                                        <span>Status: {anime.status}</span>
+                                    </>
+                                )}
                             </div>
                         ) : (
                             <div className={'anime-info'}>
@@ -57,6 +61,7 @@ export const SearchData: FC<IProps> = ({data, searchInput, viewWidth}) => {
                                 <span><small>({anime.type}, {anime.aired.prop.from.year})</small></span>
                             </div>
                         )}
+
                     </Link>
                 ))
             ) : (

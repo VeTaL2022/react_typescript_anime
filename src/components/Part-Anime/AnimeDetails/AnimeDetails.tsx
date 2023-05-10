@@ -26,6 +26,7 @@ export const AnimeDetails: FC = () => {
         characterData,
         staffData,
         reviewData,
+        isButtonClicked,
         trailerURL,
     } = useAppSelector((state) => ({
         singleData: state.animeReducer.singleData,
@@ -33,6 +34,7 @@ export const AnimeDetails: FC = () => {
         characterData: state.animeResourcesReducer.characterData,
         staffData: state.animeResourcesReducer.staffData,
         reviewData: state.animeResourcesReducer.reviewData,
+        isButtonClicked: state.animeResourcesReducer.isButtonClicked,
         trailerURL: state.animeReducer.trailerURL,
     }));
 
@@ -228,9 +230,12 @@ export const AnimeDetails: FC = () => {
                             )}
 
                             <AnimeThemeSongs anime={anime}/>
-                            {reviewData.data.length === 0 && (
+                            {reviewData.data.length === 0 && !isButtonClicked && (
                                 <Button
-                                    onClick={() => dispatch(animeResourcesActions.getReviewData({id: selectedId || ''}))}
+                                    onClick={() => {
+                                        dispatch(animeResourcesActions.setIsButtonClicked(true));
+                                        dispatch(animeResourcesActions.getReviewData({id: selectedId || ''}));
+                                    }}
                                     sx={{color: 'green-blue', margin: '20px auto 0', width: '100%', padding: '10px 0'}}
                                 >
                                     View Reviews
@@ -239,7 +244,7 @@ export const AnimeDetails: FC = () => {
                             {reviewData.data?.length > 0 && (
                                 <div className={'section'}>
                                     <h4>Reviews</h4>
-                                    {reviewData && <AnimeReviews reviewData={reviewData} animeId={selectedId || ''}/>}
+                                    <AnimeReviews reviewData={reviewData} animeId={selectedId || ''}/>
                                 </div>
                             )}
                         </div>

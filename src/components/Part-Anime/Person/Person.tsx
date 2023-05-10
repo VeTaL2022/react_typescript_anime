@@ -58,13 +58,13 @@ export const Person: FC = () => {
                                             <div key={index} style={{paddingBottom: 15}}>
                                                 {paragraph.replace(/YouTube: @\S+\s+\S+\n/, "").split('\n').map((line, index) => {
                                                         const twitterMatch = line.match(/Twitter(?:\s*\(.+?\))?:\s*@(\w+)/);
-                                                        const instagramMatch = line.match(/IG|Instagram:\s*@(\w+\.?\w*)/);
-
+                                                        const instagramMatch = line.match(/(?:IG|Instagram):\s*@(\w+\.?\w*)/);
                                                         const tiktokMatch = line.match(/TikTok:\s*@(\w+\.?\w*)/);
                                                         const facebookMatch = line.match(/Facebook:\s*@([\w.]+)/);
 
                                                         const agencyProfileMatch = line.match(/Agency profile:\s*(https?:\/\/osawa-inc\.co\.jp\/([^\/]+\/){2})/);
                                                         const radioPageMatch = line.match(/Radio page:\s*(http?:\/\/(?:www\.)?joqr\.co\.jp\/([^\/]+\/){2})/);
+                                                        const profileMatch = line.match(/Profile:\s*(\S+)/);
 
                                                         if (twitterMatch) {
                                                             const name = twitterMatch[1];
@@ -93,6 +93,11 @@ export const Person: FC = () => {
                                                                       dangerouslySetInnerHTML={{__html: replacedLine}}/>;
                                                         } else if (radioPageMatch) {
                                                             const name = radioPageMatch[1];
+                                                            const replacedLine = line.replace(`${name}`, `<a href="${name}" target="_blank">${name}</a>`);
+                                                            return <p key={index}
+                                                                      dangerouslySetInnerHTML={{__html: replacedLine}}/>;
+                                                        } else if (profileMatch) {
+                                                            const name = profileMatch[1];
                                                             const replacedLine = line.replace(`${name}`, `<a href="${name}" target="_blank">${name}</a>`);
                                                             return <p key={index}
                                                                       dangerouslySetInnerHTML={{__html: replacedLine}}/>;

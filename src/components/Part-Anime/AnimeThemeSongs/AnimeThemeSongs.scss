@@ -52,12 +52,22 @@
   }
 
   .more-less-button {
-    display: flex;
-    justify-content: flex-end;
-
-    span {
-      cursor: pointer;
-      font-size: 14px;
+    @media (min-width: 785px) {
+      display: flex;
+      justify-content: flex-end;
+      span {
+        cursor: pointer;
+        font-size: 14px;
+      }
+    }
+    @media (max-width: 784px) {
+      display: flex;
+      justify-content: center;
+      span {
+        margin-top: 5px;
+        cursor: pointer;
+        font-size: 17px;
+      }
     }
   }
 }

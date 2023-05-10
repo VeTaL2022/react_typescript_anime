@@ -1,18 +1,19 @@
 .quotes-paper {
-  width: 320px;
+  width: 330px;
   margin: 10px auto;
 
   input {
-    width: 220px;
+    width: 235px;
   }
 }
 
 @media (max-width: 468px) {
   .quotes-paper {
     width: 85%;
+    padding: 2px 0;
 
     input {
-      width: 58vw;
+      width: 60vw;
     }
   }
 }

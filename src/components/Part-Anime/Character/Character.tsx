@@ -77,26 +77,28 @@ export const Character: FC = () => {
                                     key={index}>{info?.replaceAll('&gt;', '>')}</p>)}
                             </div>
 
-                            <div className={'character-section'}>
-                                <div className={'head'}>
-                                    <h4>Voice Actors</h4>
-                                </div>
-                                <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'}}>
+                            {character.voices.length > 0 && (
+                                <div className={'character-section'}>
+                                    <div className={'head'}>
+                                        <h4>Voice Actors</h4>
+                                    </div>
+                                    <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'}}>
 
-                                    {character.voices.map((voice, index) =>
-                                        <div key={index} className={'character-voices'}>
-                                            <Link to={`/people/${voice.person.mal_id}/${voice.person.name}`}>
-                                                <img src={voice.person.images.jpg.image_url}
-                                                     alt={voice.person.name}/>
-                                            </Link>
-                                            <div>
+                                        {character.voices.map((voice, index) =>
+                                            <div key={index} className={'character-voices'}>
+                                                <Link to={`/people/${voice.person.mal_id}/${voice.person.name}`}>
+                                                    <img src={voice.person.images.jpg.image_url}
+                                                         alt={voice.person.name}/>
+                                                </Link>
+                                                <div>
                                             <span><Link
                                                 to={`/people/${voice.person.mal_id}/${voice.person.name}`}>{voice.person.name}</Link></span>
-                                                <span>{voice.language}</span>
-                                            </div>
-                                        </div>)}
+                                                    <span>{voice.language}</span>
+                                                </div>
+                                            </div>)}
+                                    </div>
                                 </div>
-                            </div>
+                            )}
                         </div>
                     </div>
                 </div>
