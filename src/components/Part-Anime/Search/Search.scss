@@ -1,4 +1,5 @@
 .search {
+  min-height: 69.4vh;
   margin: 100px auto 10px;
 
   display: flex;
@@ -15,14 +16,14 @@
   }
 
   .not-found {
-    @media (min-width: 785px) {
+    @media screen and (min-width: 769px) {
       height: 62.5vh;
       .not {
         width: 27vw;
       }
     }
 
-    @media (max-width: 784px) {
+    @media screen and (max-width: 768px) {
       min-height: 62vh;
       .not {
         width: 55vw;

@@ -11,7 +11,7 @@
   justify-content: space-around;
 }
 
-@media (max-width: 784px) {
+@media screen and (max-width: 768px) {
   .pagination {
     .MuiPaginationItem-root, .Mui-selected {
       margin: 3px;
@@ -26,7 +26,7 @@
   }
 }
 
-@media (max-width: 300px) {
+@media screen and (max-width: 300px) {
   .pagination, {
     .MuiPaginationItem-root, .Mui-selected {
       margin: 1.5px;
@@ -46,7 +46,7 @@
   border-radius: 15px;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .animes-header {
     text-align: left;
   }

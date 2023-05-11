@@ -1,4 +1,4 @@
-@media (max-width: 784px) {
+@media screen and (max-width: 768px) {
   .ranking-title {
     font-size: 18px;
   }
@@ -12,7 +12,7 @@
   display: inline-block;
 }
 
-@media (min-width: 785px) {
+@media screen and (min-width: 769px) {
   .ranking-container {
     div {
       width: 207.3px;
@@ -29,7 +29,7 @@
   }
 }
 
-@media (max-width: 784px) {
+@media screen and (max-width: 768px) {
   .ranking-container {
     div {
       width: 97.5%;

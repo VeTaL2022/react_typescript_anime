@@ -1,4 +1,8 @@
-@media (min-width: 785px) {
+$default-width: 769px;
+$default-mobile-width: 768px;
+$small-mobile-width: 300px;
+
+@media screen and (min-width: $default-width) {
   .recent-reviews {
     width: 75%;
 
@@ -14,7 +18,7 @@
   }
 }
 
-@media (max-width: 784px) {
+@media screen and (max-width: $default-mobile-width) {
   .recent-reviews {
     width: 78%;
 
@@ -42,8 +46,8 @@
 }
 
 .recent-reviews {
-  margin: 100px auto 30px;
   min-height: 66.5vh;
+  margin: 100px auto 30px;
 
   h4 {
     border-bottom: 1px solid dimgray;
@@ -54,8 +58,8 @@
   }
 
   .review-child {
-    border-bottom: 1px solid dimgray;
     margin-bottom: 15px;
+    border-bottom: 1px solid dimgray;
 
     .review-anime-title {
       a {
@@ -99,7 +103,7 @@
             text-decoration: underline;
           }
 
-          @media (max-width: 300px) {
+          @media screen and (max-width: $small-mobile-width) {
             span {
               display: none;
             }
@@ -130,26 +134,26 @@
         }
 
         p {
-          margin: 15px 0 0 0;
           padding: 0;
+          margin: 15px 0 0 0;
           text-align: left;
         }
 
         img {
-          height: 70px;
           width: 45px;
+          height: 70px;
           margin: 15px 0 0 0;
           object-fit: cover;
         }
       }
     }
 
-    @media (min-width: 785px) {
+    @media screen and (min-width: $default-width) {
       .review-footer {
         width: 20%;
       }
     }
-    @media (max-width: 784px) {
+    @media screen and (max-width: $default-mobile-width) {
       .review-footer {
         width: 100%;
 
@@ -169,6 +173,7 @@
 
     .review-footer {
       margin-top: 10px;
+
       display: flex;
       justify-content: space-between;
       align-items: center;

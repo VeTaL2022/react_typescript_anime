@@ -1,11 +1,16 @@
+$default-width: 769px;
+$default-mobile-width: 768px;
+$small-mobile-width: 300px;
+
 .anime-recs {
   border-bottom: 1px solid #9b9494;
   margin-bottom: 10px;
 
-  @media (min-width: 785px) {
+  @media screen and (min-width: $default-width) {
     .recs-container {
       margin-bottom: 5px;
       display: flex;
+
       .recs-child {
         width: 50%;
         overflow: hidden;
@@ -18,7 +23,8 @@
           width: 50px;
           transition: 0.4s;
         }
-        img:hover{
+
+        img:hover {
           scale: 1.1;
         }
 
@@ -29,7 +35,7 @@
     }
   }
 
-  @media (max-width: 784px) {
+  @media screen and (max-width: $default-mobile-width) {
     .recs-container {
       margin-bottom: 10px;
 
@@ -71,7 +77,7 @@
       }
     }
   }
-  @media (max-width: 300px) {
+  @media screen and (max-width: $small-mobile-width) {
     .recs-child {
       small {
         display: none;
@@ -113,7 +119,7 @@
     }
   }
 
-  @media (min-width: 785px) {
+  @media screen and (min-width: $default-width) {
     .recs-footer {
       margin-bottom: 10px;
 
@@ -127,7 +133,7 @@
     }
   }
 
-  @media (max-width: 784px) {
+  @media screen and (max-width: $default-mobile-width) {
     .recs-footer {
       margin-bottom: 10px;
 
@@ -140,7 +146,7 @@
       }
     }
   }
-  @media (max-width: 300px) {
+  @media screen and (max-width: $small-mobile-width) {
     .recs-footer {
       span {
         font-size: 11px;

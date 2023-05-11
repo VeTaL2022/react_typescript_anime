@@ -1,4 +1,4 @@
-@media (max-width: 784px) {
+@media screen and (max-width: 768px) {
   .season-title {
     font-size: 18px;
   }
@@ -21,7 +21,7 @@
   }
 }
 
-@media (max-width: 784px) {
+@media screen and (max-width: 768px) {
   .season-container {
     width: 100%;
   }
@@ -31,7 +31,7 @@
   border-spacing: 0;
 }
 
-@media (min-width: 785px) {
+@media screen and (min-width: 769px) {
   .season {
     width: 200px;
 
@@ -45,7 +45,7 @@
   }
 }
 
-@media (max-width: 784px) {
+@media screen and (max-width: 768px) {
   tbody {
     width: 100%;
 

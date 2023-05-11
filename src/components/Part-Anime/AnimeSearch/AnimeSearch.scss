@@ -1,11 +1,12 @@
 .anime-search {
-  margin: 100px auto 30px;
   width: 70%;
+  margin: 100px auto 30px;
+
   display: flex;
   flex-direction: column;
 }
 
-@media (max-width: 784px) {
+@media screen and (max-width: 768px) {
   .anime-search {
     width: 80%;
   }

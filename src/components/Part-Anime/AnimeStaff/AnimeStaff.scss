@@ -1,6 +1,6 @@
 .anime-staff {
   margin-left: 8px;
-  @media (min-width: 785px) {
+  @media screen and (min-width: 769px) {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -24,7 +24,7 @@
       }
     }
   }
-  @media (max-width: 784px) {
+  @media screen and (max-width: 768px) {
     .staff-child {
       margin-top: 10px;
 

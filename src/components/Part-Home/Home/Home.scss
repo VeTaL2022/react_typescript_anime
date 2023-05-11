@@ -1,5 +1,8 @@
+$default-width: 769px;
+$default-mobile-width: 768px;
+
 p {
-  @media (max-width: 784px) {
+  @media screen and (max-width: $default-mobile-width) {
     font-size: 22px;
   }
 
@@ -61,7 +64,7 @@ p {
   }
 
   .quote-section {
-    @media (max-width: 784px) {
+    @media screen and (max-width: $default-mobile-width) {
       display: none;
     }
     height: 60px;
@@ -127,7 +130,7 @@ p {
     }
   }
 
-  @media (min-width: 785px) {
+  @media screen and (min-width: $default-width) {
     .home-header {
       h4 {
         margin: 7px 5px 7px 25px;
@@ -163,7 +166,7 @@ p {
 
     }
   }
-  @media (max-width: 784px) {
+  @media screen and (max-width: $default-mobile-width) {
     width: 78%;
     .home-header {
       h4 {
@@ -267,13 +270,13 @@ p {
   }
 
   .body-section {
-    @media (min-width: 785px) {
+    @media screen and (min-width: $default-width) {
       .hr {
         min-height: 450px;
       }
       .news-part {
         width: 42%;
-        min-height: 472px;
+        max-height: 472px;
         margin-left: 35px;
 
         .news {
@@ -303,7 +306,7 @@ p {
       }
     }
 
-    @media (max-width: 784px) {
+    @media screen and (max-width: $default-mobile-width) {
       .hr {
         width: 94.5%;
         margin-left: 14px;
@@ -313,7 +316,7 @@ p {
 
       .news-part {
         width: 77vw;
-        min-height: 452px;
+        max-height: 452px;
         margin-left: 8px;
 
         .news {
@@ -423,11 +426,11 @@ p {
     }
 
     .quotes-part {
-      @media (min-width: 785px) {
+      @media screen and (min-width: $default-width) {
         width: 44%;
         margin-left: 35px;
       }
-      @media (max-width: 784px) {
+      @media screen and (max-width: $default-mobile-width) {
         margin-left: 10px;
         width: 76vw;
       }

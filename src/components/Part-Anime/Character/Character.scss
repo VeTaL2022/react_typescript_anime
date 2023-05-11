@@ -1,5 +1,8 @@
+$default-width: 769px;
+$default-mobile-width: 768px;
+
 .character {
-  @media (max-width: 784px) {
+  @media screen and (max-width: $default-mobile-width) {
     width: 80%;
   }
 
@@ -10,7 +13,7 @@
   .character-header {
     border-bottom: 1px solid slategray;
 
-    @media (max-width: 784px) {
+    @media screen and (max-width: $default-mobile-width) {
       margin-bottom: 5px;
       text-align: center;
       span {
@@ -25,7 +28,7 @@
   }
 
   .character-body {
-    @media (min-width: 785px) {
+    @media screen and (min-width: $default-width) {
       display: flex;
       .left-part {
         width: 21.3%;
@@ -60,7 +63,7 @@
         }
       }
     }
-    @media (max-width: 784px) {
+    @media screen and (max-width: $default-mobile-width) {
       display: block;
       .left-part {
         .member-favorite {
@@ -154,7 +157,7 @@
     }
 
     .right-part {
-      @media (min-width: 785px) {
+      @media screen and (min-width: $default-width) {
         width: 78.7%;
         border-left: 1px solid gray;
         .character-section {
@@ -186,7 +189,7 @@
           }
         }
       }
-      @media (max-width: 784px) {
+      @media screen and (max-width: $default-mobile-width) {
         .character-section {
           margin: 30px 8px 0 7px;
 

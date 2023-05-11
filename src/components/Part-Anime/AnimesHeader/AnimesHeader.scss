@@ -2,7 +2,7 @@
   margin-left: 5px;
   position: relative;
 
-  @media (max-width: 784px) {
+  @media screen and (max-width: 768px) {
     .chosen_type, .chosen_default {
       width: 70%;
       margin: auto;
@@ -11,7 +11,6 @@
       align-items: center;
       flex-direction: column;
     }
-
   }
 
   .chosen_genre, .chosen_producer {
@@ -26,30 +25,30 @@
     border-bottom: 1px solid gray;
 
     .active-item {
-      margin-right: 10px;
       padding: 2px 4px;
+      margin-right: 10px;
       text-decoration: none;
       background-color: rgba(153, 153, 160, 0.45);
     }
 
     .item {
+      padding: 2px 4px;
       margin-right: 10px;
       text-decoration: none;
-      padding: 2px 4px;
     }
 
     .item:hover {
       background-color: rgba(93, 93, 169, 0.35);
     }
 
-    @media (max-width: 784px) {
+    @media screen and (max-width: 768px) {
       .active-item, .item {
         width: 120px;
         font-size: 18px;
       }
     }
 
-    @media (min-width: 785px) {
+    @media screen and (min-width: 769px) {
       .active-item, .item {
         font-size: 14px;
       }

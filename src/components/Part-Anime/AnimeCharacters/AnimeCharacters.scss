@@ -1,10 +1,14 @@
+$default-width: 769px;
+$default-mobile-width: 768px;
+
 .anime-character {
   margin-left: 8px;
 
-  @media (min-width: 785px) {
+  @media screen and (min-width: $default-width) {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
     .character-child {
       width: 49%;
       margin-top: 8px;
@@ -34,7 +38,7 @@
     }
   }
 
-  @media (max-width: 784px) {
+  @media screen and (max-width: $default-mobile-width) {
     .character-child {
       margin-top: 10px;
 
@@ -70,7 +74,6 @@
     border: 1px solid dimgray;
     background-color: rgba(255, 248, 132, 0.9);
 
-
     .le {
       display: flex;
 
@@ -84,7 +87,6 @@
     .ri {
       display: flex;
       justify-content: flex-end;
-
 
       div {
         margin-top: 10px;
@@ -101,5 +103,4 @@
   .character-child:nth-child(8) {
     background-color: rgba(255, 255, 182, 0.9);
   }
-
 }

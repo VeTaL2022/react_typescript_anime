@@ -1,4 +1,4 @@
-@media (min-width: 785px) {
+@media screen and (min-width: 769px) {
   .search-form {
     .search-input {
       padding: 0.8rem;
@@ -11,7 +11,7 @@
   }
 }
 
-@media (max-width: 784px) {
+@media screen and (max-width: 768px) {
   .search-form {
     display: flex;
 
@@ -22,15 +22,11 @@
 
     .search-icon {
       width: 70px;
-
-      svg {
-        //font-size: 20px;
-      }
     }
   }
 }
 
-@media (max-width: 330px) {
+@media screen and (max-width: 330px) {
   .search-form {
     .search-input {
       padding: 0.7rem 0.3rem;
@@ -60,7 +56,6 @@
     }
 
     .search-icon {
-
       border-radius: 0 0.25rem 0.25rem 0;
       border-left: 2px solid darkgray;
       background-color: #f3f1f1;

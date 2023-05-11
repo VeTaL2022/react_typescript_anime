@@ -42,6 +42,7 @@ const getAllByCategory = createAsyncThunk<ImageInterface, { category: string }>(
     'imageSlice/getAllByCategory',
     async ({category}, {rejectWithValue}) => {
         try {
+            await new Promise(resolve => setTimeout(resolve, 1000));
             const {data} = await imageService.getAllByCategory(category);
             return data;
         } catch (e) {

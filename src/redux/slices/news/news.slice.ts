@@ -19,7 +19,7 @@ interface IState {
 const initialState: IState = {
     totalResults: 0,
     news: [],
-    offset: 10,
+    offset: 5,
     loading: false,
     error: {error: {code: 0, message: ''}},
 }

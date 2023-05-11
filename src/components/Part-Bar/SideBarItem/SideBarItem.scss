@@ -1,3 +1,7 @@
+$default-width: 769px;
+$default-mobile-width: 768px;
+$small-mobile-width: 380px;
+
 .sidebar-item {
   transition: 850ms;
 }
@@ -22,35 +26,22 @@
     padding: 5px 0;
   }
 
-  @media (max-height: 730px) {
+  @media screen and (max-height: 730px) {
     .nav-text {
-      height: 30px !important;
+      height: 32px !important;
 
       span {
         font-size: 18px;
       }
     }
   }
-  @media (max-height: 630px) {
+  @media screen and (max-height: 630px) {
     .nav-text span {
       font-size: 17px;
     }
   }
 
-  @media (max-width: 784px) {
-    .nav-text {
-      height: 50px;
-    }
-    span {
-      font-size: 20px;
-    }
-  }
-  @media (max-width: 380px) {
-    .nav-text {
-      height: 35px;
-    }
-  }
-  @media (min-width: 785px) {
+  @media screen and (min-width: $default-width) {
     .nav-text {
       height: 40px;
     }
@@ -58,11 +49,24 @@
       font-size: 16px;
     }
   }
+  @media screen and (max-width: $default-mobile-width) {
+    .nav-text {
+      height: 50px;
+    }
+    span {
+      font-size: 20px;
+    }
+  }
+  @media screen and (max-width: $small-mobile-width) {
+    .nav-text {
+      height: 35px;
+    }
+  }
 }
 
-@media (max-height: 730px) {
+@media screen and (max-height: 730px) {
   .father {
-    height: 45px !important;
+    height: 47px !important;
 
     div {
       font-size: 20px !important;
@@ -70,7 +74,7 @@
   }
 }
 
-@media (max-height: 630px) {
+@media screen and (max-height: 630px) {
   .father {
     height: 40px !important;
 
@@ -80,7 +84,18 @@
   }
 }
 
-@media (max-width: 784px) {
+@media screen and (min-width: $default-width) {
+  .father {
+    height: 50px;
+
+    div {
+      padding: 0 30px;
+      font-size: 18px;
+    }
+  }
+}
+
+@media screen and (max-width: $default-mobile-width) {
   .father {
     height: 60px;
 
@@ -91,20 +106,9 @@
   }
 }
 
-@media (max-width: 380px) {
+@media screen and (max-width: $small-mobile-width) {
   .father {
     height: 50px;
-  }
-}
-
-@media (min-width: 785px) {
-  .father {
-    height: 50px;
-
-    div {
-      padding: 0 30px;
-      font-size: 18px;
-    }
   }
 }
 
@@ -117,19 +121,20 @@
     display: flex;
     align-items: center;
   }
-  @media (max-height: 730px) {
-    .father-icon{
+
+  @media screen and (max-height: 730px) {
+    .father-icon {
       font-size: 28px !important;
     }
   }
-  @media (max-width: 784px) {
-    .father-icon {
-      font-size: 35px;
-    }
-  }
-  @media (min-width: 785px) {
+  @media screen and (min-width: $default-width) {
     .father-icon {
       font-size: 28px;
+    }
+  }
+  @media screen and (max-width: $default-mobile-width) {
+    .father-icon {
+      font-size: 35px;
     }
   }
 
@@ -143,9 +148,9 @@
   background-color: #f4db4a;
 }
 
-@media (max-height: 730px) {
+@media screen and (max-height: 730px) {
   .nav-text {
-    height: 45px !important;
+    height: 47px !important;
 
     a {
       font-size: 20px !important;
@@ -153,7 +158,7 @@
   }
 }
 
-@media (max-height: 630px) {
+@media screen and (max-height: 630px) {
   .nav-text {
     height: 40px !important;
 
@@ -163,33 +168,33 @@
   }
 }
 
-@media (max-width: 784px) {
+@media screen and (min-width: $default-width) {
   .nav-text {
-    padding: 5px 0;
-    height: 60px;
+    height: 50px;
+    padding: 8px 0;
 
     a {
-      font-size: 24px;
-      padding: 0 50px;
+      padding: 0 30px;
+      font-size: 18px;
     }
   }
 }
 
-@media (max-width: 380px) {
+@media screen and (max-width: $default-mobile-width) {
+  .nav-text {
+    height: 60px;
+    padding: 5px 0;
+
+    a {
+      padding: 0 50px;
+      font-size: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: $small-mobile-width) {
   .nav-text {
     height: 40px;
-  }
-}
-
-@media (min-width: 785px) {
-  .nav-text {
-    padding: 8px 0;
-    height: 50px;
-
-    a {
-      font-size: 18px;
-      padding: 0 30px;
-    }
   }
 }
 
@@ -214,19 +219,19 @@
   }
 }
 
-@media (max-height: 730px) {
+@media screen and (max-height: 730px) {
   .icons svg {
     font-size: 24px !important;
   }
 }
 
-@media (max-height: 630px) {
+@media screen and (max-height: 630px) {
   .icons svg {
     font-size: 23px !important;
   }
 }
 
-@media (max-width: 784px) {
+@media screen and (max-width: $default-mobile-width) {
   .icons {
     margin-bottom: 3px;
 

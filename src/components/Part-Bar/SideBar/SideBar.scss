@@ -1,22 +1,21 @@
-@media (max-height: 750px) {
-  .nav-menu {
+$default-width: 769px;
+$default-mobile-width: 768px;
+$small-mobile-width: 300px;
 
-  }
-}
 
-@media (min-width: 785px) {
+@media screen and (min-width: $default-width) {
   .nav-menu {
     width: 200px;
   }
 }
 
-@media (max-width: 784px) {
+@media screen and (max-width: $default-mobile-width) {
   .nav-menu {
     width: 70vw;
   }
 }
 
-@media (max-width: 300px) {
+@media screen and (max-width: $small-mobile-width) {
   .nav-menu {
     width: 85vw;
   }
@@ -49,7 +48,7 @@
     align-items: center;
   }
 
-  @media (min-width: 785px) {
+  @media screen and (min-width: $default-width) {
     .github {
       height: 50px;
 
@@ -66,7 +65,7 @@
       }
     }
   }
-  @media (max-height: 730px) {
+  @media screen and (max-height: 730px) {
     .github {
       height: 50px !important;
 
@@ -79,7 +78,7 @@
       }
     }
   }
-  @media (max-width: 784px) {
+  @media screen and (max-width: $default-mobile-width) {
     .github {
       height: 60px;
 
@@ -125,5 +124,5 @@
 .nav-menu.active {
   left: 0;
   transition: 350ms;
-  z-index: 2;
+  z-index: 5;
 }

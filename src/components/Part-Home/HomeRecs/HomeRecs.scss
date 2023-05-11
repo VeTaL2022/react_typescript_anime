@@ -1,15 +1,18 @@
+$default-width: 769px;
+$default-mobile-width: 768px;
+
 .home-recs {
-  @media (min-width: 785px) {
+  @media screen and (min-width: $default-width) {
     h4 {
       font-size: 15px;
     }
   }
-  @media (max-width: 784px) {
+  @media screen and (max-width: $default-mobile-width) {
     width: 97%;
     margin: 20px auto 0;
     h4 {
-      font-size: 14px;
       width: 50%;
+      font-size: 14px;
     }
   }
 
@@ -31,7 +34,7 @@
     }
 
     span {
-      @media (max-width: 784px) {
+      @media screen and (max-width: $default-mobile-width) {
         a {
           font-size: 17px;
         }

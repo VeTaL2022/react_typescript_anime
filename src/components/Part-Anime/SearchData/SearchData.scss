@@ -1,5 +1,5 @@
 .anime-search-data {
-  @media (min-width: 785px) {
+  @media screen and (min-width: 769px) {
     .anime {
       .anime-info {
         span {
@@ -13,7 +13,7 @@
     }
   }
 
-  @media (max-width: 784px) {
+  @media screen and (max-width: 768px) {
     .anime {
       img {
         width: 20%;
@@ -42,10 +42,10 @@
   .anime {
     height: 40px;
     padding: 3px;
+
     cursor: pointer;
     border-top: 1px solid black;
     text-decoration: none;
-
     display: flex;
 
     img {
@@ -55,8 +55,7 @@
     }
 
     .anime-info {
-      margin-left: 5px;
-      margin-top: 3px;
+      margin: 3px 0 0 5px;
       display: flex;
       flex-direction: column;
     }

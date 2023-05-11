@@ -1,3 +1,6 @@
+$default-width: 769px;
+$default-mobile-width: 768px;
+
 .anime-review {
   margin-left: 8px;
 
@@ -10,7 +13,7 @@
     border-bottom: 1px solid darkgrey;
 
     .review-body {
-      @media (min-width: 785px) {
+      @media screen and (min-width: $default-width) {
         display: flex;
         .review-user {
           a, span {
@@ -33,7 +36,7 @@
           }
         }
       }
-      @media (max-width: 784px) {
+      @media screen and (max-width: $default-mobile-width) {
         a img {
           display: none;
         }
@@ -99,7 +102,7 @@
     display: flex;
     justify-content: space-between;
 
-    @media (min-width: 785px) {
+    @media screen and (min-width: $default-width) {
       width: 40%;
       margin-left: 35px;
       span a svg {
@@ -107,7 +110,7 @@
       }
     }
 
-    @media (max-width: 784px) {
+    @media screen and (max-width: $default-mobile-width) {
       .read-more {
         display: none;
       }
@@ -147,7 +150,7 @@
   }
 
   .review-more {
-    @media (min-width: 785px) {
+    @media screen and (min-width: $default-width) {
       margin: 5px 0;
       span {
         i {
@@ -159,7 +162,7 @@
         }
       }
     }
-    @media (max-width: 784px) {
+    @media screen and (max-width: $default-mobile-width) {
       margin: 10px 0;
       justify-content: center;
       span {

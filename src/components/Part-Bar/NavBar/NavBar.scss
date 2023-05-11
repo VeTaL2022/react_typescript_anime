@@ -9,13 +9,8 @@
   background-color: #fff;
   position: fixed;
   z-index: 4;
-  @media (max-width: 784px) {
-    h2 {
-      font-size: 28px;
-    }
-  }
 
-  @media (min-width: 785px) {
+  @media screen and (min-width: 769px) {
     h2 {
       font-size: 25px;
     }
@@ -39,13 +34,15 @@
 
 .menu-bars {
   margin-left: 1rem;
+  z-index: 10;
   background: none;
-  @media (max-width: 784px) {
+
+  @media screen and (min-width: 769px) {
     svg {
-      font-size: 38px;
+      font-size: 30px;
     }
   }
-  @media (min-width: 785px) {
+  @media screen and (max-width: 768px) {
     svg {
       font-size: 30px;
     }

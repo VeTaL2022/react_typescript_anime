@@ -1,23 +1,24 @@
 .producers {
-  margin: 120px auto 30px;
   width: 70%;
+  margin: 120px auto 30px;
 
-  @media (max-width: 784px) {
+  @media screen and (min-width: 769px) {
+    .producer-navigation {
+      width: 97.4%;
+      border-bottom: 1px solid darkslategray;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
     width: 80%;
     .producer-navigation {
       border-bottom: none;
 
       span {
-        font-size: 19px;
         margin: 5px;
+        font-size: 19px;
         border-bottom: 1px solid darkslategray;
       }
-    }
-  }
-  @media (min-width: 785px) {
-    .producer-navigation {
-      width: 97.4%;
-      border-bottom: 1px solid darkslategray;
     }
   }
 
@@ -37,7 +38,7 @@
   }
 
   .producer-container {
-    @media (min-width: 785px) {
+    @media screen and (min-width: 769px) {
       h2 {
         font-size: 18px;
       }
@@ -47,7 +48,7 @@
         font-size: 15px;
       }
     }
-    @media (max-width: 784px) {
+    @media screen and (max-width: 768px) {
       table {
         width: 97%;
       }
@@ -59,13 +60,12 @@
         svg {
           font-size: 26px;
         }
-
       }
     }
 
     h2 {
-      margin: 40px 0 0 0;
       width: 97.4%;
+      margin: 40px 0 0 0;
       text-align: left;
       border-bottom: 1px solid darkgray;
     }
@@ -82,6 +82,5 @@
       background-color: rgba(195, 193, 193, 0.5);
       cursor: pointer;
     }
-
   }
 }

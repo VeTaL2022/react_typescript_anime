@@ -1,5 +1,8 @@
+$default-width: 769px;
+$default-mobile-width: 768px;
+
 .staff {
-  @media (max-width: 785px) {
+  @media screen and (max-width: $default-width) {
     width: 80%;
     h4 {
       font-size: 18px;
@@ -27,19 +30,19 @@
   }
 
   .staff-body {
-    @media (min-width: 785px) {
+    @media screen and (min-width: $default-width) {
       display: flex;
     }
 
     .staff-right {
-      @media (min-width: 785px) {
+      @media screen and (min-width: $default-width) {
         width: 78.7%;
         border-left: 1px solid gray;
         h4 {
           font-size: 15px;
         }
       }
-      @media (max-width: 784px) {
+      @media screen and (max-width: $default-mobile-width) {
         width: 96.5%;
         h4 {
           font-size: 17px;
@@ -71,11 +74,11 @@
         }
 
         .character-children {
-          @media (min-width: 785px) {
+          @media screen and (min-width: $default-width) {
             display: flex;
             justify-content: space-between;
           }
-          @media (max-width: 784px) {
+          @media screen and (max-width: $default-mobile-width) {
             width: 100%;
             margin-top: 20px;
 
@@ -95,7 +98,7 @@
           }
 
           .chr {
-            @media (min-width: 785px) {
+            @media screen and (min-width: $default-width) {
               width: 50%;
               img {
                 width: 50px;
@@ -109,7 +112,7 @@
                 }
               }
             }
-            @media (max-width: 784px) {
+            @media screen and (max-width: $default-mobile-width) {
               padding: 15px 0;
               background-color: rgba(129, 204, 236, 0.2);
               img {
@@ -139,7 +142,7 @@
           }
 
           .actors-container {
-            @media (min-width: 785px) {
+            @media screen and (min-width: $default-width) {
               width: 50%;
               img {
                 width: 40px;
@@ -152,7 +155,7 @@
                 }
               }
             }
-            @media (max-width: 784px) {
+            @media screen and (max-width: $default-mobile-width) {
               width: 100%;
               img {
                 width: 45px;
@@ -187,7 +190,7 @@
         }
 
         .staff-children {
-          @media (min-width: 785px) {
+          @media screen and (min-width: $default-width) {
             img {
               width: 40px;
             }
@@ -198,7 +201,7 @@
               font-size: 14.5px;
             }
           }
-          @media (max-width: 784px) {
+          @media screen and (max-width: $default-mobile-width) {
             width: 100%;
             img {
               width: 45px;

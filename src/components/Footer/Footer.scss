@@ -1,10 +1,10 @@
-@media (min-width: 785px) {
+@media screen and (min-width: 769px) {
   .footer .info {
     font-size: 12px;
   }
 }
 
-@media (max-width: 784px) {
+@media screen and (max-width: 768px) {
   .footer {
     div {
       span {
@@ -20,7 +20,7 @@
   }
 }
 
-@media (max-width: 300px) {
+@media screen and (max-width: 300px) {
   .footer {
     div {
       span {

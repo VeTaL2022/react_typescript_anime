@@ -1,9 +1,13 @@
+$default-width: 769px;
+$default-mobile-width: 768px;
+$small-mobile-width: 380px;
+
 .home-animes {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 
-  @media (min-width: 785px) {
+  @media (min-width: $default-width) {
     .top-airing {
       width: 133.5px;
       margin-left: 18px !important;
@@ -13,7 +17,7 @@
       margin-left: 13px !important;
     }
   }
-  @media (max-width: 784px) {
+  @media (max-width: $default-mobile-width) {
     .top-airing {
       width: 130px;
     }
@@ -33,10 +37,10 @@
   }
 
   .anime-child {
-    @media (max-width: 784px) {
+    @media (max-width: $default-mobile-width) {
       margin: 5px;
     }
-    @media (max-width: 380px) {
+    @media (max-width: $small-mobile-width) {
       width: 45%;
     }
     height: 200px;

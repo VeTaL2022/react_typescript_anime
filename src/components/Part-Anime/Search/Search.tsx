@@ -68,12 +68,11 @@ export const Search: FC = () => {
                                     </div>
                                 </div>
                             </div>}
-                        <div className={'animes-footer'}>
+                        <div>
                             {pagination.last_visible_page > 1 && (
                                 <Stack>
                                     <Pagination
                                         count={pagination.last_visible_page}
-                                        color="primary"
                                         page={currentPage}
                                         onChange={(event, page) => {
                                             setCurrentPage(page);

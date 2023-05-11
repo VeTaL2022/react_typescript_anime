@@ -1,6 +1,6 @@
 .producers-main {
   margin-top: 40px;
-  @media (max-width: 784px) {
+  @media screen and (max-width: 768px) {
     .producer-navigation {
       font-size: 18px;
     }
@@ -23,7 +23,7 @@
     }
   }
 
-  @media (min-width: 785px) {
+  @media screen and (min-width: 769px) {
     .producer-container {
       div {
         width: 207.3px;
@@ -39,7 +39,7 @@
       }
     }
   }
-  @media (max-width: 784px) {
+  @media screen and (max-width: 768px) {
     .producer-container {
       div {
         width: 97.5%;

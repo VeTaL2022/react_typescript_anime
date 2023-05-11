@@ -17,14 +17,13 @@ import './Home.scss';
 
 const randomCategory = image_categories[Math.floor(Math.random() * image_categories.length)];
 export const Home: FC = () => {
-    const {quote, loading, error, news, images, load, data, quotes} = useAppSelector((state) => ({
+    const {quote, error, news, images, imageLoading, data, quotes} = useAppSelector((state) => ({
         quotes: state.quoteReducer.quotes,
         quote: state.quoteReducer.quote,
-        loading: state.quoteReducer.loading,
         error: state.quoteReducer.error,
         news: state.newsReducer.news,
         images: state.imageReducer.image,
-        load: state.imageReducer.loading,
+        imageLoading: state.imageReducer.loading,
         data: state.animeReducer.data,
     }));
     const dispatch = useAppDispatch();
@@ -42,7 +41,7 @@ export const Home: FC = () => {
             setLang: 'en',
             safeSearch: 'strict',
             count: 5,
-            offset: 10,
+            offset: 5,
         }));
     }, [dispatch]);
 
@@ -70,7 +69,7 @@ export const Home: FC = () => {
         setSearchValue(event.target.value);
     }
     return (
-        loading || load ? <Loader height={100}/> :
+        imageLoading ? <Loader height={100}/> :
             <>
                 <div className={'home'}>
                     <div className={'home-header'}>
@@ -177,7 +176,7 @@ export const Home: FC = () => {
                                         <div key={i}>
                                             <span>({q.anime})</span>
                                             <p>
-                                                <q><b>{q.quote.length < 130 ? q.quote : q.quote.slice(0, 130) + '...'}</b></q>
+                                                <q><b>{q.quote.length < 125 ? q.quote : q.quote.slice(0, 125) + '...'}</b></q>
                                             </p>
                                             <p>by {q.character}</p>
                                         </div>)}
