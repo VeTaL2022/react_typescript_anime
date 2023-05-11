@@ -1,3 +1,9 @@
+@media (max-height: 750px) {
+  .nav-menu {
+
+  }
+}
+
 @media (min-width: 785px) {
   .nav-menu {
     width: 200px;
@@ -43,23 +49,6 @@
     align-items: center;
   }
 
-  @media (max-width: 784px) {
-    .github {
-      height: 60px;
-
-      svg {
-        font-size: 33px;
-      }
-
-      div {
-        padding: 0 50px;
-      }
-
-      span {
-        font-size: 23px;
-      }
-    }
-  }
   @media (min-width: 785px) {
     .github {
       height: 50px;
@@ -74,6 +63,36 @@
 
       span {
         font-size: 18px;
+      }
+    }
+  }
+  @media (max-height: 730px) {
+    .github {
+      height: 50px !important;
+
+      svg {
+        font-size: 30px !important;
+      }
+
+      span {
+        font-size: 21px !important;
+      }
+    }
+  }
+  @media (max-width: 784px) {
+    .github {
+      height: 60px;
+
+      svg {
+        font-size: 33px;
+      }
+
+      div {
+        padding: 0 50px;
+      }
+
+      span {
+        font-size: 23px;
       }
     }
   }

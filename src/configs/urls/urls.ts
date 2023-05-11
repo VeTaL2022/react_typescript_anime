@@ -1,5 +1,6 @@
 const AnimeAPI_URL = import.meta.env.VITE_ANIME_API_URL;
 const NewsAPI_URL = import.meta.env.VITE_NEWS_API_URL;
+const RapidAPI_News_URL = import.meta.env.VITE_RAPID_API_NEWS;
 const QuoteAPI_URL = import.meta.env.VITE_QUOTE_API_URL;
 const ImageAPI_URL = import.meta.env.VITE_IMAGE_API_URL;
 
@@ -20,4 +21,4 @@ const urls = {
     many: '/many/sfw', // many images
 }
 
-export {AnimeAPI_URL, NewsAPI_URL, QuoteAPI_URL, ImageAPI_URL, urls}
+export {AnimeAPI_URL, NewsAPI_URL, RapidAPI_News_URL, QuoteAPI_URL, ImageAPI_URL, urls}

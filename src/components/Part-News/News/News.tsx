@@ -20,7 +20,7 @@ export const News: FC = () => {
             sortBy: 'date',
             setLang: 'en',
             safeSearch: 'strict',
-            count: 17,
+            count: 15,
             offset: offset,
         }))
     }, [offset]);
@@ -35,15 +35,15 @@ export const News: FC = () => {
     const uniqueNews = Array.from(new Set(news.map(article => article.name))).map(name => {
         return news.find(article => article.name === name);
     });
-
     return (
         loading ? <Loader height={100}/> :
             <InfiniteScroll
                 loader={''}
-                hasMore={offset < 90} dataLength={totalResults}
+                hasMore={offset < 100} dataLength={totalResults}
                 next={() => dispatch(newsActions.setOffSet(offset + 15))}>
-                <div className={'news-container'} style={{marginBottom: offset < 90 ? 15 : 20}}>
-                    {error.error ? (<div style={{height: '60vh', display: 'flex',flexDirection: 'column', justifyContent: 'center'}}>
+                <div className={'news-container'} style={{marginBottom: offset < 100 ? 15 : 20}}>
+                    {error.error.code > 0 ? (<div
+                        style={{height: '60vh', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
                         <p>Status Code - {error.error.code}</p>
                         <p>{error.error.message}</p>
                     </div>) : (

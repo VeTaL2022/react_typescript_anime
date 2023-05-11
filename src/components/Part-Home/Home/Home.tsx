@@ -41,8 +41,8 @@ export const Home: FC = () => {
             sortBy: 'date',
             setLang: 'en',
             safeSearch: 'strict',
-            count: 7,
-            offset: 0,
+            count: 5,
+            offset: 10,
         }));
     }, [dispatch]);
 
@@ -99,7 +99,7 @@ export const Home: FC = () => {
                             )}
                         </div>
                     </div>
-                    <hr style={{width: '66.7vw', border: '1px solid  #aeaaaa'}}/>
+                    <hr style={{width: '90%', border: '1px solid  #aeaaaa'}}/>
                     <div className={'image-info-section'}>
                         <div className={'left-side'}>
                             <p className={'fade-in'}>
@@ -135,7 +135,7 @@ export const Home: FC = () => {
                             </Masonry>
                         </div>
                     </div>
-                    <hr style={{width: '66.7vw', border: '1px solid  #aeaaaa'}}/>
+                    <hr style={{width: '90%', border: '1px solid  #aeaaaa'}}/>
                     <div className={'body-section'}>
                         {news.length > 0 && (
                             <>
@@ -167,7 +167,7 @@ export const Home: FC = () => {
                         </div>
                     </div>
 
-                    <hr style={{width: '66.7vw', border: '1px solid  #aeaaaa'}}/>
+                    <hr style={{width: '90%', border: '1px solid  #aeaaaa'}}/>
                     <div className={'body-section'}>
                         {quotes.length > 0 && (
                             <>
@@ -191,7 +191,7 @@ export const Home: FC = () => {
                                         dynamicClass={'most-popular'}/>
                         </div>
                     </div>
-                    <hr style={{width: '66.7vw', border: '1px solid  #aeaaaa'}}/>
+                    <hr style={{width: '90%', border: '1px solid  #aeaaaa'}}/>
                     <HomeReviews/>
                     <HomeRecs/>
                     <ToTop/>

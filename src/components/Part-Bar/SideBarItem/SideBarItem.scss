@@ -19,8 +19,22 @@
   display: none;
 
   .nav-text {
-    //height: 40px;
     padding: 5px 0;
+  }
+
+  @media (max-height: 730px) {
+    .nav-text {
+      height: 30px !important;
+
+      span {
+        font-size: 18px;
+      }
+    }
+  }
+  @media (max-height: 630px) {
+    .nav-text span {
+      font-size: 17px;
+    }
   }
 
   @media (max-width: 784px) {
@@ -42,6 +56,26 @@
     }
     span {
       font-size: 16px;
+    }
+  }
+}
+
+@media (max-height: 730px) {
+  .father {
+    height: 45px !important;
+
+    div {
+      font-size: 20px !important;
+    }
+  }
+}
+
+@media (max-height: 630px) {
+  .father {
+    height: 40px !important;
+
+    div {
+      font-size: 19px !important;
     }
   }
 }
@@ -77,15 +111,17 @@
 .father {
   div {
     height: 100%;
-    //padding: 0 30px;
 
     cursor: pointer;
-    //font-size: 18px;
 
     display: flex;
     align-items: center;
   }
-
+  @media (max-height: 730px) {
+    .father-icon{
+      font-size: 28px !important;
+    }
+  }
   @media (max-width: 784px) {
     .father-icon {
       font-size: 35px;
@@ -98,7 +134,6 @@
   }
 
   .father-icon {
-    //font-size: 28px;
     position: absolute;
     right: 20px;
   }
@@ -106,6 +141,26 @@
 
 .father:hover {
   background-color: #f4db4a;
+}
+
+@media (max-height: 730px) {
+  .nav-text {
+    height: 45px !important;
+
+    a {
+      font-size: 20px !important;
+    }
+  }
+}
+
+@media (max-height: 630px) {
+  .nav-text {
+    height: 40px !important;
+
+    a {
+      font-size: 19px !important;
+    }
+  }
 }
 
 @media (max-width: 784px) {
@@ -139,7 +194,6 @@
 }
 
 .nav-text {
-  //height: 50px;
   list-style: none;
 
   display: flex;
@@ -149,10 +203,7 @@
   a {
     width: 95%;
     height: 100%;
-    //padding: 0 30px;
-
     text-decoration: none;
-    //font-size: 18px;
 
     display: flex;
     align-items: center;
@@ -160,6 +211,18 @@
 
   a:hover {
     background-color: #f4db4a;
+  }
+}
+
+@media (max-height: 730px) {
+  .icons svg {
+    font-size: 24px !important;
+  }
+}
+
+@media (max-height: 630px) {
+  .icons svg {
+    font-size: 23px !important;
   }
 }
 
