@@ -19,13 +19,14 @@ axiosService_NewsAPI.interceptors.request.use(config => {
 
 export const axiosService_RapidAPI_News = axios.create({baseURL: RapidAPI_News_URL});
 
-const rapidHeaders: any = {
+const rapidHeaders = {
     'X-BingApis-SDK': 'true',
     'X-RapidAPI-Key': import.meta.env.VITE_RAPID_API_KEY as string,
     'X-RapidAPI-Host': import.meta.env.VITE_RAPID_API_HOST as string
 };
 
 axiosService_RapidAPI_News.interceptors.request.use(config => {
-    config.headers = rapidHeaders;
+    config.headers = Object.assign({}, config.headers, rapidHeaders);
     return config;
 })
+

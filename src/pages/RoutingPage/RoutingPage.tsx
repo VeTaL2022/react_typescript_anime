@@ -32,12 +32,20 @@ export const RoutingPage: FC = () => {
     const showSideBar = (): void => {
         setSideBar(!sideBar);
         setActive(!active);
+
+        if (!sideBar) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
     }
+
 
     const hideSideBar = (): void => {
         if (sideBar) {
             setActive(false);
             setSideBar(false);
+            document.body.style.overflow = '';
         }
     }
 

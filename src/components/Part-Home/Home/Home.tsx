@@ -15,7 +15,8 @@ import {Footer} from "../../Footer";
 import {ToTop} from "../../ToTop";
 import './Home.scss';
 
-const randomCategory = image_categories[Math.floor(Math.random() * image_categories.length)];
+let randomCategory = '';
+
 export const Home: FC = () => {
     const {quote, error, news, images, imageLoading, data, quotes} = useAppSelector((state) => ({
         quotes: state.quoteReducer.quotes,
@@ -28,9 +29,11 @@ export const Home: FC = () => {
     }));
     const dispatch = useAppDispatch();
     const [searchValue, setSearchValue] = useState<string>('');
+    const [load, setLoad] = useState<boolean>(true);
     const navigate = useNavigate();
 
     useEffect(() => {
+        randomCategory = image_categories[Math.floor(Math.random() * image_categories.length)];
         dispatch(quoteActions.getRandom());
         dispatch(quoteActions.getAllRandom());
         dispatch(animeActions.getTop({page: 1, filter: 'airing', limit: 14, type: ''}))
@@ -42,22 +45,28 @@ export const Home: FC = () => {
             safeSearch: 'strict',
             count: 5,
             offset: 5,
+            freshness: 'day'
         }));
+        setTimeout(() => {
+            setLoad(false);
+        }, 1000);
     }, [dispatch]);
 
     useEffect(() => {
         dispatch(quoteActions.reset());
         dispatch(newsActions.reset());
-    }, [dispatch]);
+    }, []);
 
     const articleURL = (url: string) => {
         return url.split('https://')?.pop()?.split('/')[0];
     };
+
     const breakColumns = {
         default: 3,
         1300: 2,
         1000: 1,
     };
+
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (searchValue.length >= 3) {
@@ -68,8 +77,9 @@ export const Home: FC = () => {
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         setSearchValue(event.target.value);
     }
+
     return (
-        imageLoading ? <Loader height={100}/> :
+        imageLoading || load ? <Loader height={100}/> :
             <>
                 <div className={'home'}>
                     <div className={'home-header'}>

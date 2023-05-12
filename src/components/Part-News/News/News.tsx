@@ -22,6 +22,7 @@ export const News: FC = () => {
             safeSearch: 'strict',
             count: 15,
             offset: offset,
+            freshness: 'day'
         }))
     }, [offset]);
 

@@ -8,13 +8,6 @@ $background_theme: #060b26;
 }
 
 .app {
-  @media screen and (max-width: 768px) {
-    html {
-      height: calc(100% + 60px);
-      min-height: calc(100% + 60px);
-    }
-  }
-
   position: absolute;
   top: $zero;
   bottom: $zero;
@@ -28,7 +21,6 @@ $background_theme: #060b26;
     object-fit: cover;
   }
 }
-
 
 .light * {
   color: #000;

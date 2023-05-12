@@ -62,7 +62,7 @@ export const Producers: FC = () => {
                             }}>
                             <Link to={`/anime/producer/${producer.mal_id}/${producer.titles[0].title}`}>
                                 <KeyboardArrowRight fontSize={"small"}/>
-                                {producer.titles[0].title.length < 25 ? producer.titles[0].title : producer.titles[0].title.slice(0, 25) + '...'} ({producer.count})
+                                {producer.titles[0].title.length < 16 ? producer.titles[0].title : producer.titles[0].title.slice(0, 16) + '...'} ({producer.count})
                             </Link>
                         </td>
                     ))}
@@ -100,7 +100,8 @@ export const Producers: FC = () => {
                         ))}
                     </div>
                 </div>
-                <Footer info={'Anime studios produce anime shows with their own unique style and strengths. Fans follow their favorite studios for new releases and collaborations.'}/>
+                <Footer
+                    info={'Anime studios produce anime shows with their own unique style and strengths. Fans follow their favorite studios for new releases and collaborations.'}/>
                 <ToTop/>
             </>
     );

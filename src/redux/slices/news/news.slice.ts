@@ -24,11 +24,11 @@ const initialState: IState = {
     error: {error: {code: 0, message: ''}},
 }
 
-const getAll = createAsyncThunk<INewsResponse, { q: string, safeSearch: string, setLang: string, sortBy: string, count: number, offset: number }>(
+const getAll = createAsyncThunk<INewsResponse, { q: string, safeSearch: string, setLang: string, sortBy: string, count: number, offset: number, freshness: string }>(
     'newsSlice/getAll',
-    async ({q, safeSearch, setLang, sortBy, count, offset}, {rejectWithValue}) => {
+    async ({q, safeSearch, setLang, sortBy, count, offset, freshness}, {rejectWithValue}) => {
         try {
-            const {data} = await newsService.getAll(q, safeSearch, setLang, sortBy, count, offset);
+            const {data} = await newsService.getAll(q, safeSearch, setLang, sortBy, count, offset, freshness);
             return data;
         } catch (e) {
             const err = e as AxiosError;
