@@ -8,6 +8,7 @@ import {AnimeSearchData} from "../AnimeSearchData";
 import {Loader} from "../../Loader";
 import {Footer} from "../../Footer";
 import './AnimeSearch.scss';
+import {ToTop} from "../../ToTop";
 
 export const AnimeSearch: FC = () => {
     const [loading, setLoading] = useState(true);
@@ -30,6 +31,7 @@ export const AnimeSearch: FC = () => {
                 </div>
                 <Footer
                     info={'Anime genres classify shows by themes and styles, produced by studios. Searching for genres helps find new series. Studios have unique styles and strengths, influencing the type of anime they produce.'}/>
+                <ToTop/>
             </>
     );
 };

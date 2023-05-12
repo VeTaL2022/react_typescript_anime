@@ -6,7 +6,7 @@ $center: center;
   height: 100vh;
 
   .container {
-    @media screen and (min-width: 501px) {
+    @media screen and (min-width: 769px) {
       h2 {
         font-size: 20px;
       }
@@ -23,15 +23,15 @@ $center: center;
         border-radius: 30px;
       }
     }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 768px) {
       h2 {
         font-size: 20px;
       }
       h3 {
-        padding: 8px 10px;
+        padding: 5px;
       }
       p {
-        font-size: 18px;
+        font-size: 17.5px;
       }
     }
     @media screen and (max-width: 300px) {
@@ -39,11 +39,11 @@ $center: center;
         font-size: 17px;
       }
       h3 {
-        padding: 5px 0;
-        font-size: 16px;
+        padding: 3px 0;
+        font-size: 14px;
       }
       p {
-        font-size: 15px;
+        font-size: 14.5px;
       }
     }
     width: $hundred;
@@ -80,7 +80,7 @@ $center: center;
       background-color: #fbe35d;
 
       text-align: $center;
-      border-radius: 10px;
+      border-radius: 5px;
       border: 2px solid rgba(119, 136, 153, 0.56);
     }
 

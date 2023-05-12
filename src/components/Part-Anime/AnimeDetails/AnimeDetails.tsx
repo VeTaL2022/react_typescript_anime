@@ -16,6 +16,7 @@ import {duration} from "../AnimeCard";
 import {Loader} from "../../Loader";
 import {Footer} from "../../Footer";
 import './AnimeDetails.scss'
+import {ToTop} from "../../ToTop";
 
 export const AnimeDetails: FC = () => {
     const {selectedId = ''} = useParams();
@@ -252,6 +253,7 @@ export const AnimeDetails: FC = () => {
                 </div>
                 <Footer
                     info={'Anime details are often packed with meaning and symbolism, enhancing the viewing experience and making it a unique form of storytelling.'}/>
+                <ToTop/>
             </>
     );
 };
