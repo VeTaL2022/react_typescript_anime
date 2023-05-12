@@ -1,6 +1,8 @@
 React + TypeScript + Vite App
 !![img.png](img.png)
 
+Try the build here: https://anixtra-react-ts.netlify.app/
+
 This is a starter template for building a React app with TypeScript and Vite.
 
 Getting Started
