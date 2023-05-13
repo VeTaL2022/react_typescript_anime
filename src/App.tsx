@@ -19,11 +19,15 @@ export const App: FC = () => {
 
     return (
         <div className={`app ${theme}`}>
-            {theme === 'light' ? (
-                <video src={lightTheme} loop autoPlay controls={false} muted style={{opacity: 0.99}} playsInline/>
-            ) : (
-                <video src={darkTheme} loop controls={false} muted autoPlay/>
-            )}
+            <video
+                src={theme === 'light' ? lightTheme : darkTheme}
+                controls={false}
+                playsInline={false}
+                autoPlay
+                loop
+                muted
+                style={{opacity: 0.99}}
+            />
 
             <Routes>
                 <Route path={'/'} element={<DisclaimerPage/>}/>
@@ -31,13 +35,17 @@ export const App: FC = () => {
             </Routes>
 
             <FormGroup>
-                <FormControlLabel label={''} onClick={switchTheme}
-                                  control={<MaterialUISwitch
-                                      sx={{m: 2, position: 'fixed', right: -5, top: 2, text: 'hide', zIndex: 5}}
-                                      checked={theme === 'dark'}/>}
+                <FormControlLabel
+                    label={''}
+                    onClick={switchTheme}
+                    control={
+                        <MaterialUISwitch
+                            sx={{m: 2, position: 'fixed', right: -5, top: 2, text: 'hide', zIndex: 5}}
+                            checked={theme === 'dark'}
+                        />
+                    }
                 />
             </FormGroup>
-
         </div>
     );
 };

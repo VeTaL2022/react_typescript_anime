@@ -224,7 +224,11 @@ $background_theme: #060b26;
 }
 
 .dark .replay-container {
-  background-color: #000;
+  background-color: #2e2d2d;
+}
+
+.dark .replay-container:hover {
+  background-color: #201f1f;
 }
 
 .dark .category-buttons-container {
@@ -308,13 +312,9 @@ $background_theme: #060b26;
     }
   }
 
-  .image-info-section {
-    .right-side {
-      .image-masonry-grid {
-        img:hover {
-          box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.8);
-        }
-      }
+  .image-info-section .right-side .image-masonry-grid {
+    img:hover {
+      box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.8);
     }
   }
 
@@ -339,6 +339,10 @@ $background_theme: #060b26;
       box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.8);
     }
   }
+}
+
+.dark .images-masonry-grid {
+  border: 15px solid #232a46;
 }
 
 .dark .home-animes {

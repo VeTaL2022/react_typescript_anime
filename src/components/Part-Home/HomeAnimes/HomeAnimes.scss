@@ -43,12 +43,15 @@ $small-mobile-width: 380px;
     @media (max-width: $small-mobile-width) {
       width: 45%;
     }
+    @media screen and (max-width: 300px){
+      width: 60%;
+    }
     height: 200px;
     margin: 5px 0;
 
     border-radius: 5px;
     border: 1px solid #9ba7b2;
-    background-color: #fbebeb;
+    background-color: #f8e7e7;
     text-decoration: none;
 
     display: flex;

@@ -21,7 +21,7 @@ export const HomeRecs: FC = () => {
                 <span><Link to={'/anime/recommendations'}>View More</Link></span>
             </div>
             <div style={{margin: '10px 10px 0 10px'}}>
-                {recsData.data.slice(0, 5).map((recs, index) => <AnimeRecs animeRecs={recs} key={index}/>)}
+                {recsData.data?.slice(0, 5).map((recs, index) => <AnimeRecs animeRecs={recs} key={index}/>)}
             </div>
         </div>
     );

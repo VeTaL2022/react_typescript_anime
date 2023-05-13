@@ -1,5 +1,6 @@
 $default-width: 769px;
 $default-mobile-width: 768px;
+$small-mobile-width: 350px;
 
 p {
   @media screen and (max-width: $default-mobile-width) {
@@ -40,7 +41,7 @@ p {
     input {
       max-width: 130px;
       padding: 4px 30px 4px 4px;
-      margin-right: 20px;
+      margin-right: 25px;
       border-radius: 5px;
       border: 2px solid #a09e9e;
     }
@@ -51,7 +52,7 @@ p {
 
       position: absolute;
       top: 1px;
-      right: 25px;
+      right: 30px;
     }
   }
 
@@ -65,6 +66,7 @@ p {
     @media screen and (max-width: $default-mobile-width) {
       display: none;
     }
+
     height: 60px;
     overflow: hidden;
 
@@ -161,19 +163,28 @@ p {
           height: 100px;
         }
       }
-
     }
   }
   @media screen and (max-width: $default-mobile-width) {
     width: 78%;
     .home-header {
+      justify-content: space-around;
+
       h4 {
-        margin: 10px auto;
+        margin: 10px 0;
         font-size: 19px;
       }
 
-      input {
-        display: none;
+      .search-icon-single {
+        margin-top: 5px;
+
+        svg {
+          padding: 3px;
+          font-size: 22px;
+          background-color: rgba(159, 159, 165, 0.44);
+          border-radius: 50%;
+          position: unset;
+        }
       }
     }
     .hr {
@@ -205,6 +216,24 @@ p {
           width: 33vw;
           height: 80px;
         }
+      }
+    }
+  }
+  @media screen and (max-width: $small-mobile-width) {
+    .home-header {
+      h4 {
+        font-size: 15px;
+      }
+
+      .search-icon-single svg {
+        padding: 2px;
+        font-size: 18px;
+      }
+    }
+    .image-info-section .right-side {
+      img {
+        width: 68vw;
+        height: 90px;
       }
     }
   }

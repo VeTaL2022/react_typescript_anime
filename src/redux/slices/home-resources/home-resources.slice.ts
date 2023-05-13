@@ -29,7 +29,7 @@ const initialState: IState = {
     },
     reviewExpand: [],
 
-    recsData: {data: [], pagination: {last_visible_page: 1, has_next_page: true}},
+    recsData: {data: [], pagination: {last_visible_page: 1, has_next_page: true}, status: 0, type: '', message: ''},
     recsPage: 1,
 
     loading: false,

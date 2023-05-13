@@ -52,19 +52,20 @@ export const Character: FC = () => {
                                         </div>
                                     </div>)}
                             </div>
-
-                            <div className={'section'}>
-                                <h4>Mangaography</h4>
-                                {character.manga.map((a, i) =>
-                                    <div key={i} className={'character-items'}>
-                                        <img src={a.manga.images.jpg.image_url}
-                                             alt={a.manga.title}/>
-                                        <div>
-                                            <span>{a.manga.title}</span>
-                                            <span>{a.role}</span>
-                                        </div>
-                                    </div>)}
-                            </div>
+                            {character.manga.length > 0 && (
+                                <div className={'section'}>
+                                    <h4>Mangaography</h4>
+                                    {character.manga.map((a, i) =>
+                                        <div key={i} className={'character-items'}>
+                                            <img src={a.manga.images.jpg.image_url}
+                                                 alt={a.manga.title}/>
+                                            <div>
+                                                <span>{a.manga.title}</span>
+                                                <span>{a.role}</span>
+                                            </div>
+                                        </div>)}
+                                </div>
+                            )}
                         </div>
 
 
@@ -73,7 +74,7 @@ export const Character: FC = () => {
                                 <div className={'head'}>
                                     <span><b>{character.name}</b> ({character.name_kanji})</span>
                                 </div>
-                                {character.about.split('\n').map((info, index) => <p
+                                {character.about?.split('\n').map((info, index) => <p
                                     key={index}>{info?.replaceAll('&gt;', '>')}</p>)}
                             </div>
 

@@ -38,9 +38,8 @@ export const Images:FC = () => {
     };
 
     const breakColumns = {
-        default: 5,
-        1200: 4,
-        1000: 3,
+        default: 4,
+        1200: 3,
         800: 2,
         400: 1
     };

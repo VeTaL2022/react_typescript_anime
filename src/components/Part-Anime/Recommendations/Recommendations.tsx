@@ -25,7 +25,6 @@ export const Recommendations: FC = () => {
     return (
         loading ? <Loader height={100}/> :
             <>
-                <div className={'search'}>
                     <div className={'recommendations'}>
                         <h4>Anime Recommendations</h4>
                         {pagination?.last_visible_page > 1 && (
@@ -47,9 +46,14 @@ export const Recommendations: FC = () => {
                         )}
                     </div>
                     <>
+                        {data?.length > 0 ? (
                         <div className={'rec-container'}>
-                            {data.map((anime, index) => <AnimeRecs animeRecs={anime} key={index}/>)}
+                            {data?.map((anime, index) => <AnimeRecs animeRecs={anime} key={index}/>)}
                         </div>
+                        ): <div>
+                            <p>{recsData.status} - {recsData.type}</p>
+                            <p>{recsData.message}</p>
+                        </div>}
 
                         <div className={'recs-footer'}>
                             {pagination?.last_visible_page > 1 && (
@@ -68,7 +72,6 @@ export const Recommendations: FC = () => {
                             )}
                         </div>
                     </>
-                </div>
                 <Footer
                     info={'Anime has diverse genres, including popular titles like Attack on Titan and Fullmetal Alchemist. Get recommendations from friends or check out curated lists on Netflix, Crunchyroll, or Funimation.'}/>
                 <ToTop/>

@@ -65,6 +65,7 @@ export const Person: FC = () => {
                                                         const agencyProfileMatch = line.match(/Agency profile:\s*(https?:\/\/osawa-inc\.co\.jp\/([^\/]+\/){2})/);
                                                         const radioPageMatch = line.match(/Radio page:\s*(http?:\/\/(?:www\.)?joqr\.co\.jp\/([^\/]+\/){2})/);
                                                         const profileMatch = line.match(/Profile:\s*(\S+)/);
+                                                        const blogMatch = line.match(/Blog:\s*(\S+)/);
 
                                                         if (twitterMatch) {
                                                             const name = twitterMatch[1];
@@ -99,6 +100,11 @@ export const Person: FC = () => {
                                                         } else if (profileMatch) {
                                                             const name = profileMatch[1];
                                                             const replacedLine = line.replace(`${name}`, `<a href="${name}" target="_blank">${name}</a>`);
+                                                            return <p key={index}
+                                                                      dangerouslySetInnerHTML={{__html: replacedLine}}/>;
+                                                        } else if (blogMatch) {
+                                                            const name = blogMatch[1];
+                                                            const replacedLine = line.replace(`${name}`, `<a href="${name}" target="_blank">${name.length > 35 ? name.slice(0, 35) + '...' : name}</a>`);
                                                             return <p key={index}
                                                                       dangerouslySetInnerHTML={{__html: replacedLine}}/>;
                                                         } else {

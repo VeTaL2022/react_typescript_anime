@@ -81,7 +81,9 @@ export const AnimeDetailsLeft: FC<{ anime: IAnimeData }> = ({anime}) => {
                         <span><b>Studios:</b> {studios}</span>
                     )}
                     <span><b>Source:</b> {anime.source}</span>
-                    <span><b>Genres:</b> {genres}</span>
+                    {anime.genres.length > 0 && (
+                        <span><b>Genres:</b> {genres}</span>
+                    )}
                     {anime.themes.length > 0 && <span><b>Themes:</b> {themes}</span>}
                     {anime.demographics.length > 0 && <span><b>Demographic:</b> {demographic}</span>}
                     <span><b>Duration:</b> {anime.duration}</span>

@@ -173,6 +173,7 @@ const getFullById = createAsyncThunk<IAnime, { id: string }>(
     'animeSlice/getFullById',
     async ({id}, {rejectWithValue}) => {
         try {
+            await new Promise(resolve => setTimeout(resolve, 1000));
             const {data} = await animeService.getFullById(id);
             return data;
         } catch (e) {

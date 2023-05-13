@@ -56,7 +56,6 @@ export const Home: FC = () => {
         dispatch(quoteActions.reset());
         dispatch(newsActions.reset());
     }, []);
-
     const articleURL = (url: string) => {
         return url.split('https://')?.pop()?.split('/')[0];
     };
@@ -86,17 +85,24 @@ export const Home: FC = () => {
                         <h4>
                             Welcome to AniXtra
                         </h4>
-                        <form onSubmit={handleSubmit}>
-                            <div style={{position: 'relative'}}>
-                                <input
-                                    type="text"
-                                    placeholder={'Search Anime...'}
-                                    value={searchValue}
-                                    onChange={handleChange}
-                                />
-                                {searchValue.length >= 3 && (<Search/>)}
-                            </div>
-                        </form>
+                        {window.innerWidth < 768 && (
+                            <Link to={'/anime/search'} className={'search-icon-single'}>
+                                <Search fontSize={'large'}/>
+                            </Link>
+                        )}
+                        {window.innerWidth > 768 && (
+                            <form onSubmit={handleSubmit}>
+                                <div style={{position: 'relative'}}>
+                                    <input
+                                        type="text"
+                                        placeholder={'Search Anime...'}
+                                        value={searchValue}
+                                        onChange={handleChange}
+                                    />
+                                    {searchValue.length >= 3 && (<Search/>)}
+                                </div>
+                            </form>
+                        )}
                     </div>
                     <div className={'quote-section'}>
                         <div className={'quote-slider'}>

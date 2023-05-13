@@ -15,8 +15,8 @@ import {AnimeStaff} from "../AnimeStaff";
 import {duration} from "../AnimeCard";
 import {Loader} from "../../Loader";
 import {Footer} from "../../Footer";
-import './AnimeDetails.scss'
 import {ToTop} from "../../ToTop";
+import './AnimeDetails.scss'
 
 export const AnimeDetails: FC = () => {
     const {selectedId = ''} = useParams();
@@ -139,12 +139,16 @@ export const AnimeDetails: FC = () => {
                                                 <span>{studios}</span>
                                             </>
                                         )}
-                                        <hr/>
-                                        <span>{anime.genres.slice(0, 4).map((g, i) =>
-                                            <span key={i}><Link
-                                                to={`/anime/genre/${g.mal_id}/${g.name}`}>{g.name}</Link>{i < anime.genres.slice(0, 4).length - 1 && ', '}
-                                            </span>)}
-                                        </span>
+                                        {anime.genres?.length > 0 && (
+                                            <>
+                                                <hr/>
+                                                <span>{anime.genres.slice(0, 4).map((g, i) =>
+                                                    <span key={i}><Link
+                                                        to={`/anime/genre/${g.mal_id}/${g.name}`}>{g.name}</Link>{i < anime.genres.slice(0, 4).length - 1 && ', '}
+                                                    </span>)}
+                                                </span>
+                                            </>
+                                        )}
                                     </div>
                                 </div>
                                 <div className={'trailer'}>
@@ -231,7 +235,7 @@ export const AnimeDetails: FC = () => {
                             )}
 
                             <AnimeThemeSongs anime={anime}/>
-                            {reviewData.data.length === 0 && !isButtonClicked && (
+                            {reviewData.data?.length === 0 && !isButtonClicked && (
                                 <Button
                                     onClick={() => {
                                         dispatch(animeResourcesActions.setIsButtonClicked(true));
