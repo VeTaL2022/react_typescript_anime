@@ -26,7 +26,7 @@ export const App: FC = () => {
                 autoPlay
                 loop
                 muted
-                style={{opacity: 0.99}}
+                style={{opacity: 0.99, minHeight:'100vh'}}
             />
 
             <Routes>
